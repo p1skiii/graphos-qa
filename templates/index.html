@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>篮球知识图谱问答系统 - G-Retriever</title>
+    <meta charset="utf-8">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background-color: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #333; 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .system-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        .status-item {
+            text-align: center;
+        }
+        .status-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .status-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600;
+            color: #333;
+        }
+        input[type="text"] { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid #e1e5e9; 
+            border-radius: 8px; 
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .secondary-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+        .init-btn {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+        .result { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #f8f9fa; 
+            border-radius: 10px; 
+            border-left: 4px solid #667eea; 
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+        .answer-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+        }
+        .confidence-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+        }
+        .subgraph-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .info-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .seed-nodes {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .context-section {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left-color: #dc3545;
+        }
+        .tab-container {
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+        }
+        .tab.active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            font-weight: 600;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏀 篮球知识图谱问答系统</h1>
+        <div class="subtitle">基于 G-Retriever 的智能图检索问答系统</div>
+        
+        <div class="system-status">
+            <div class="status-item">
+                <div class="status-value" id="nodeCount">-</div>
+                <div class="status-label">图节点数</div>
+            </div>
+            <div class="status-item">
+                <div class="status-value" id="edgeCount">-</div>
+                <div class="status-label">图边数</div>
+            </div>
+            <div class="status-item">
+                <div class="status-value" id="systemStatus">未知</div>
+                <div class="status-label">系统状态</div>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button onclick="initializeSystem()" class="init-btn" id="initBtn">🚀 初始化G-Retriever</button>
+            <button onclick="getSystemInfo()" class="secondary-btn">📊 获取系统信息</button>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('simple')">简单问答</button>
+                <button class="tab" onclick="switchTab('advanced')">高级问答</button>
+            </div>
+            
+            <div id="simple-tab" class="tab-content active">
+                <div class="form-group">
+                    <label for="question">🤔 请输入您的问题:</label>
+                    <input type="text" id="question" placeholder="例如: 勒布朗·詹姆斯的年龄是多少？" onkeypress="handleEnter(event)">
+                </div>
+                <button onclick="askQuestion('simple')" id="askBtn">🔍 提问 (SimpleRAG)</button>
+                <button onclick="askQuestion('gretriever')" id="gAskBtn">🧠 智能提问 (G-Retriever)</button>
+            </div>
+            
+            <div id="advanced-tab" class="tab-content">
+                <div class="form-group">
+                    <label for="advancedQuestion">🎯 高级问题:</label>
+                    <input type="text" id="advancedQuestion" placeholder="例如: 分析湖人队球员的年龄分布" onkeypress="handleAdvancedEnter(event)">
+                </div>
+                <div class="form-group">
+                    <label for="formatType">📝 答案格式:</label>
+                    <select id="formatType" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px;">
+                        <option value="qa">问答格式</option>
+                        <option value="detailed">详细格式</option>
+                        <option value="compact">紧凑格式</option>
+                    </select>
+                </div>
+                <button onclick="askAdvancedQuestion()" id="advancedAskBtn">🚀 高级提问</button>
+            </div>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let systemInitialized = false;
+        
+        async function initializeSystem() {
+            const btn = document.getElementById('initBtn');
+            btn.disabled = true;
+            btn.innerHTML = '🔄 初始化中...';
+            
+            try {
+                const response = await fetch('/g-initialize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success' || data.status === 'already_initialized') {
+                    systemInitialized = true;
+                    btn.innerHTML = '✅ 系统已初始化';
+                    btn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                    getSystemInfo();
+                } else {
+                    btn.innerHTML = '❌ 初始化失败';
+                    btn.style.background = 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)';
+                }
+            } catch (error) {
+                btn.innerHTML = '❌ 初始化错误';
+                btn.style.background = 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)';
+                console.error('初始化错误:', error);
+            }
+            
+            setTimeout(() => {
+                btn.disabled = false;
+                if (!systemInitialized) {
+                    btn.innerHTML = '🚀 重新初始化';
+                    btn.style.background = 'linear-gradient(135deg, #ffc107 0%, #fd7e14 100%)';
+                }
+            }, 2000);
+        }
+        
+        async function getSystemInfo() {
+            try {
+                const response = await fetch('/g-system-info');
+                const data = await response.json();
+                
+                if (data.stats) {
+                    document.getElementById('nodeCount').textContent = data.stats.node_count || 0;
+                    document.getElementById('edgeCount').textContent = data.stats.edge_count || 0;
+                }
+                document.getElementById('systemStatus').textContent = data.initialized ? '已初始化' : '未初始化';
+                document.getElementById('systemStatus').style.color = data.initialized ? '#28a745' : '#dc3545';
+                
+                systemInitialized = data.initialized;
+            } catch (error) {
+                console.error('获取系统信息失败:', error);
+            }
+        }
+        
+        function switchTab(tabName) {
+            // 隐藏所有标签页
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的标签页
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        async function askQuestion(type) {
+            const question = document.getElementById('question').value.trim();
+            if (!question) {
+                alert('请输入问题');
+                return;
+            }
+            
+            const endpoint = type === 'gretriever' ? '/g-ask' : '/ask';
+            const btn = document.getElementById(type === 'gretriever' ? 'gAskBtn' : 'askBtn');
+            
+            btn.disabled = true;
+            btn.innerHTML = '🤔 思考中...';
+            
+            document.getElementById('result').innerHTML = '<div class="loading">🔄 正在分析您的问题...</div>';
+            
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                const data = await response.json();
+                displayResult(data, type);
+                
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    '<div class="result error"><h3>❌ 错误</h3><p>' + error.message + '</p></div>';
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = type === 'gretriever' ? '🧠 智能提问 (G-Retriever)' : '🔍 提问 (SimpleRAG)';
+        }
+        
+        async function askAdvancedQuestion() {
+            const question = document.getElementById('advancedQuestion').value.trim();
+            const format = document.getElementById('formatType').value;
+            
+            if (!question) {
+                alert('请输入问题');
+                return;
+            }
+            
+            const btn = document.getElementById('advancedAskBtn');
+            btn.disabled = true;
+            btn.innerHTML = '🔄 处理中...';
+            
+            document.getElementById('result').innerHTML = '<div class="loading">🧠 正在使用G-Retriever分析...</div>';
+            
+            try {
+                const response = await fetch('/g-ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        question: question,
+                        format: format
+                    })
+                });
+                
+                const data = await response.json();
+                displayResult(data, 'gretriever-advanced');
+                
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    '<div class="result error"><h3>❌ 错误</h3><p>' + error.message + '</p></div>';
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = '🚀 高级提问';
+        }
+        
+        function displayResult(data, type) {
+            if (data.error) {
+                document.getElementById('result').innerHTML = 
+                    '<div class="result error"><h3>❌ 错误</h3><p>' + data.error + '</p></div>';
+                return;
+            }
+            
+            let html = '<div class="result">';
+            
+            // 答案部分
+            html += '<div class="answer-section">';
+            html += '<h3>💡 回答:</h3>';
+            html += '<p>' + data.answer.replace(/\n/g, '<br>') + '</p>';
+            
+            if (data.confidence !== undefined) {
+                html += '<div style="margin-top: 10px;">';
+                html += '<span><strong>置信度:</strong> ' + (data.confidence * 100).toFixed(1) + '%</span>';
+                html += '<div class="confidence-bar">';
+                html += '<div class="confidence-fill" style="width: ' + (data.confidence * 100) + '%"></div>';
+                html += '</div>';
+                html += '</div>';
+            }
+            html += '</div>';
+            
+            // G-Retriever特有信息
+            if (type.includes('gretriever') && data.subgraph_info) {
+                html += '<div class="subgraph-info">';
+                html += '<div class="info-card">';
+                html += '<h4>📊 子图信息</h4>';
+                html += '<p><strong>节点数:</strong> ' + data.subgraph_info.num_nodes + '</p>';
+                html += '<p><strong>边数:</strong> ' + data.subgraph_info.num_edges + '</p>';
+                html += '</div>';
+                
+                html += '<div class="info-card">';
+                html += '<h4>⏱️ 处理信息</h4>';
+                html += '<p><strong>处理时间:</strong> ' + (data.processing_time || 0).toFixed(2) + '秒</p>';
+                if (data.seed_nodes && data.seed_nodes.length > 0) {
+                    html += '<div class="seed-nodes">';
+                    html += '<strong>🌱 种子节点:</strong><br>';
+                    html += data.seed_nodes.join('<br>');
+                    html += '</div>';
+                }
+                html += '</div>';
+                html += '</div>';
+                
+                if (data.context && data.context.trim()) {
+                    html += '<div class="context-section">';
+                    html += '<h4>📋 推理上下文:</h4>';
+                    html += data.context.replace(/\n/g, '<br>');
+                    html += '</div>';
+                }
+            }
+            
+            // SimpleRAG来源信息
+            if (data.sources && data.sources.length > 0) {
+                html += '<div style="margin-top: 15px;">';
+                html += '<h4>📚 信息来源:</h4>';
+                data.sources.forEach(source => {
+                    html += '<div class="info-card" style="margin: 5px 0;">';
+                    html += '<strong>类型:</strong> ' + source.type + '<br>';
+                    html += '<strong>内容:</strong> ' + source.text + '<br>';
+                    html += '<strong>相似度:</strong> ' + (source.similarity * 100).toFixed(1) + '%';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+            
+            html += '</div>';
+            document.getElementById('result').innerHTML = html;
+        }
+        
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                askQuestion('gretriever');
+            }
+        }
+        
+        function handleAdvancedEnter(event) {
+            if (event.key === 'Enter') {
+                askAdvancedQuestion();
+            }
+        }
+        
+        // 页面加载时获取系统信息
+        window.onload = function() {
+            getSystemInfo();
+        };
+    </script>
+</body>
+</html>
