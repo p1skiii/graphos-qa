@@ -1,0 +1,14 @@
+# Web框架
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# 图数据库
+nebula3-python==3.4.0
+
+# 环境变量管理
+python-dotenv==1.0.0
+
+# RAG相关依赖 - 使用兼容版本
+sentence-transformers>=2.0.0
+scikit-learn>=1.0.0
+numpy>=1.20.0
