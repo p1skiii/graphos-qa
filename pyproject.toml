@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "graphos-qa"
+version = "1.0.0"
+description = "Basketball Knowledge Q&A System with G-Retriever and Intelligent Routing"
+authors = ["Wang <wang@example.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.1.1"
+flask-cors = "^6.0.0"
+python-dotenv = "^1.1.0"
+sentence-transformers = "<3.0"
+scikit-learn = "<1.5"
+numpy = "<2.0"
+faiss-cpu = "^1.11.0"
+networkx = "<3.5"
+torch = "2.1.0"
+torchvision = "<0.17"
+transformers = "<5.0"
+accelerate = "<1.0"
+pandas = "<3.0"
+datasets = "<3.0"
+nebula3-python = "^3.8.3"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

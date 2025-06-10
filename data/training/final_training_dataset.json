@@ -1,0 +1,3082 @@
+[
+  {
+    "text": "Kobe什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 詹姆斯?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析Warriors的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "湖人和凯尔特人哪个更厉害？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "库里和LeBron谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "比较邓肯和加内特",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么LeBron被称为Black Mamba？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe和LeBron什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Rockets在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Spurs在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan和奥尼尔什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "if Kobe and LeBron same team?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "火箭队主场在哪？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Spurs history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "凯尔特人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe vs LeBron who better?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq and Yao Ming relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Rockets history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明几号？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明和Shaq谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "和姚明同时期超过2米的中锋？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "分析Spurs的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析Rockets的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比和库里什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Warriors history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里和科比谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming和姚明什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里和Shaq谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯和Duncan什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明什么时候退役？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "NBA选秀制度演变",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers players who won championship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Yao Ming height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Duncan和Jordan什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析Lakers的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯现在哪个队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Curry position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan和杜兰特谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Rockets history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "湖人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明和詹姆斯有什么共同点？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "如何评价詹姆斯生涯？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe和奥尼尔什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "杜兰特 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔和科比谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 勇士 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "explain triangle offense?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是科比的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Celtics在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron number?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "奥尼尔 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron and Yao Ming relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔和LeBron什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming number?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe total points?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明哪国人？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe jersey number?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "who better Shaq or 杜兰特?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析火箭的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么Kobe被称为石佛？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe和杜兰特什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe and Curry relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron career points?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Jordan height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 姚明?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 勇士 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "马刺在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "who are Kobe teammates?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "how connect Yao Ming and Kobe?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "乔丹多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Spurs history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Chinese players impact in NBA",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "火箭队平均年龄？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是Kobe的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明什么时候出生的？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "analyze 火箭 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比总得分？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe和库里谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 湖人 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "如果邓肯去了其他队？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming teammates list?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Duncan多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么Kobe被称为小皇帝？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔多高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯第几顺位？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "teammates of Duncan?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming和库里什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "杜兰特在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe和Duncan谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明 and Jordan relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "path from Rockets to Lakers?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是詹姆斯的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe和Yao Ming什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔和邓肯谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "杜兰特几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "东部西部哪个更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Rockets在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "when Yao Ming retire?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么邓肯被称为石佛？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 马刺 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么奥尼尔被称为大鲨鱼？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe development journey",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "乔丹 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Lakers vs Celtics which better?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明和科比什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么奥尼尔被称为小皇帝？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Lakers history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么科比被称为Black Mamba？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪个球队冠军最多？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Spurs history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming和杜兰特什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 杜兰特?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Spurs history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Lakers dynasty",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "analyze 勇士 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "how many Lakers players?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "analyze 勇士 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan championships?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 and 姚明 relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比职业生涯所有队友",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe nationality?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是杜兰特的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯生涯得分？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是科比的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe retired?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 马刺 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "马刺 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯多重？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比效力哪个球队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯球衣号码？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯有多高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明和奥尼尔谁更高？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 马刺 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Celtics history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析Warriors的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯生日？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better 乔丹 or Yao Ming?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming和詹姆斯什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 凯尔特人 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron draft position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "分析勇士的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比 height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq和Curry谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Celtics location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比和杜兰特什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan和乔丹谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "who better 杜兰特 or 邓肯?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Curry和詹姆斯什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "中国球员和美国球员的联系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "LeBron什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Lakers location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明在哪个队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe和乔丹谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Lakers history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比来自哪里？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "凯尔特人在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "邓肯还在打球吗？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是邓肯的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯几个戒指？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "analyze 火箭 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比退役了吗？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "从火箭队到湖人队有哪些球员转会？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明场均得分？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明和Shaq什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么杜兰特被称为黑曼巴？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "在火箭打过球的中国球员",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better LeBron or 乔丹?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析火箭的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明和詹姆斯谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Celtics location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 马刺 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "what if Yao Ming no injury?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明体重？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "勇士在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming and Kobe relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "teammates of 奥尼尔?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 杜兰特?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming vs Shaq who taller?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是奥尼尔的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan和邓肯什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯体重？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "centers over 7 feet in Yao Ming era?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "得分最多的球员？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么科比叫黑曼巴？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明的队友都有谁？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "奥尼尔几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 杜兰特?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是奥尼尔的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming和詹姆斯谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq and 邓肯 relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么Kobe被称为黑曼巴？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "探讨篮球运动的全球化",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better Duncan or 乔丹?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Rockets location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比和詹姆斯谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "凯尔特人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯和谁一起打过球？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better Kobe or Jordan?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "湖人队在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "分析中国球员在NBA的影响",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of Yao Ming?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Spurs history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming draft?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "为什么Duncan被称为石佛？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明职业生涯发展轨迹",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "analyze Rockets history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Warriors history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯和韦德认识吗？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "LeBron height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan still playing?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 姚明?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析火箭的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析湖人王朝历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "湖人阵容变化",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "teammates of Yao Ming?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比和詹姆斯同队会如何？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Yao Ming from which country?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "奥尼尔 and Duncan relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "discuss basketball globalization",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明对中国篮球的影响？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Spurs在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe draft pick?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "马刺队在哪？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是Yao Ming的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是Yao Ming的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明和邓肯谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "凯尔特人在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是杜兰特的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming which team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "teammates of 詹姆斯?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "湖人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯和LeBron什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯几个总冠军？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "why Kobe called Black Mamba?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "如果姚明没受伤会怎样？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Curry age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Celtics history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明选秀顺位？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better 邓肯 or Jordan?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹和Duncan谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "凯尔特人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Kobe多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan and 科比 relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是邓肯的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of Kobe?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯和帕克是队友吗？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "库里几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么Shaq被称为黑曼巴？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of Jordan?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是Curry的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "最年轻的MVP？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Duncan age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "who better 姚明 or 乔丹?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "凯尔特人 location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron和Yao Ming什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq and 杜兰特 relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "tallest NBA player ever?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比几号秀？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "杜兰特 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "詹姆斯 and 奥尼尔 relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "库里 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "杜兰特 team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "奥尼尔 and Duncan relationship?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Curry在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of 科比?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析Celtics的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "既是湖人球员又拿过冠军的有谁？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "who better 科比 or 邓肯?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "解释什么是三角进攻？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq和Duncan什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "NBA历史最高球员是谁？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Curry和科比什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming career timeline",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "凯尔特人在哪个城市？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明多高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "邓肯什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron and Wade teammates?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "通过什么路径连接姚明和科比？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Duncan age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Rockets location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron from where?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "为什么奥尼尔被称为大鲨鱼？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比打什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "哪些球员是乔丹的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "teammates of Kobe?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq height?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯国籍？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "邓肯多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze 凯尔特人 history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "乔丹 position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "库里在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Yao Ming how old?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "邓肯身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比几个冠军？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比和乔丹什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比几岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "分析Spurs的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "LeBron几号球衣？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Lakers roster changes",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Yao Ming impact on basketball?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "姚明身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是詹姆斯的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比哪年出生？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "分析科比和乔丹的区别",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Lakers location?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "哪些球员是乔丹的队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Jordan和库里谁更强？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明什么位置？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "LeBron team?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Curry身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "杜兰特和Duncan什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "假设乔丹在现代会怎样？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Duncan身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Lakers city?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比从新秀到退役历程",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Curry身高？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "Shaq多少岁？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "姚明和Curry什么关系？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯 age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "科比多重？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Shaq在哪队？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "湖人队总共多少球员？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "LeBron age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "analyze Warriors history",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "compare Duncan and Garnett",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "most championships team?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "马刺文化是什么？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Curry position?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "邓肯的年龄？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "Kobe age?",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "teammates of 库里?",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "分析勇士的历史",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "pseudo",
+    "quality": "medium"
+  },
+  {
+    "text": "詹姆斯今年多大？",
+    "label": 0,
+    "label_name": "simple_query",
+    "source": "golden",
+    "quality": "high"
+  },
+  {
+    "text": "科比有哪些队友？",
+    "label": 1,
+    "label_name": "complex_query",
+    "source": "golden",
+    "quality": "high"
+  }
+]
