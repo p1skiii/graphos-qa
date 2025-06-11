@@ -9,6 +9,10 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+# 注册API蓝图
+from app.routes import api_bp
+app.register_blueprint(api_bp)
+
 # HTML模板
 HTML_TEMPLATE = """
 <!DOCTYPE html>

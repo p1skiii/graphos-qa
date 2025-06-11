@@ -19,13 +19,14 @@ class PCSTGraphBuilder(BaseGraphBuilder):
     """PCST (Prize-Collecting Steiner Tree) 图构建器"""
     
     def __init__(self, max_nodes: int = 20, prize_weight: float = 1.0, 
-                 cost_weight: float = 0.5):
+                 cost_weight: float = 0.5, nebula_conn=None):
         """初始化PCST图构建器"""
         self.max_nodes = max_nodes
         self.prize_weight = prize_weight
         self.cost_weight = cost_weight
         
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.graph = nx.Graph()
         self.node_prizes = {}
         self.edge_costs = {}
@@ -36,10 +37,11 @@ class PCSTGraphBuilder(BaseGraphBuilder):
         try:
             logger.info("🔄 初始化PCST图构建器...")
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 构建完整图结构
             self._build_full_graph()
@@ -304,12 +306,13 @@ class PCSTGraphBuilder(BaseGraphBuilder):
 class SimpleGraphBuilder(BaseGraphBuilder):
     """简单图构建器 - 基于BFS的简单扩展"""
     
-    def __init__(self, max_nodes: int = 15, max_depth: int = 2):
+    def __init__(self, max_nodes: int = 15, max_depth: int = 2, nebula_conn=None):
         """初始化简单图构建器"""
         self.max_nodes = max_nodes
         self.max_depth = max_depth
         
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.graph = nx.Graph()
         self.is_initialized = False
     
@@ -318,10 +321,11 @@ class SimpleGraphBuilder(BaseGraphBuilder):
         try:
             logger.info("🔄 初始化简单图构建器...")
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 构建完整图结构
             self._build_full_graph()
@@ -480,12 +484,13 @@ class SimpleGraphBuilder(BaseGraphBuilder):
 class WeightedGraphBuilder(BaseGraphBuilder):
     """加权图构建器 - 基于节点重要性的图构建"""
     
-    def __init__(self, max_nodes: int = 18, importance_threshold: float = 0.1):
+    def __init__(self, max_nodes: int = 18, importance_threshold: float = 0.1, nebula_conn=None):
         """初始化加权图构建器"""
         self.max_nodes = max_nodes
         self.importance_threshold = importance_threshold
         
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.graph = nx.Graph()
         self.node_importance = {}
         self.is_initialized = False
@@ -495,10 +500,11 @@ class WeightedGraphBuilder(BaseGraphBuilder):
         try:
             logger.info("🔄 初始化加权图构建器...")
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 构建图结构
             self._build_full_graph()

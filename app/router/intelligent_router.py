@@ -89,7 +89,7 @@ class IntelligentRouter:
         
         # 第一级：零样本门卫过滤 - 极速拦截明显无关查询
         gatekeeper_start = time.time()
-        is_domain_related, gatekeeper_reason, gatekeeper_analysis = self.zero_shot_gatekeeper.smart_filter(user_input)
+        is_domain_related, gatekeeper_reason, gatekeeper_analysis = self.zero_shot_gatekeeper.smart_filter(user_input, confidence_threshold=0.2)
         gatekeeper_time = time.time() - gatekeeper_start
         
         if not is_domain_related:

@@ -56,9 +56,10 @@ class BaseProcessor(ABC):
             
             # 初始化缓存管理器
             if self.cache_manager:
-                if not self.cache_manager.initialize():
-                    logger.warning(f"⚠️ 缓存管理器初始化失败，处理器 {self.processor_name} 将不使用缓存")
-                    self.cache_manager = None
+                # CacheManager不需要单独的initialize方法，在构造时已经初始化
+                logger.info(f"✅ 缓存管理器已就绪，处理器 {self.processor_name} 将使用缓存")
+            else:
+                logger.info(f"📝 处理器 {self.processor_name} 未启用缓存")
             
             self.is_initialized = True
             logger.info(f"✅ 处理器 {self.processor_name} 初始化完成")
@@ -210,10 +211,52 @@ class ProcessorUtils:
         numbers = re.findall(r'\d+', query)
         entities['numbers'] = numbers
         
-        # 提取可能的属性
-        attribute_keywords = ['年龄', '身高', '体重', '得分', '助攻', '篮板']
+        # 扩展的球员名称库（支持中英文）
+        player_names = [
+            # 英文名称
+            'yao ming', 'kobe bryant', 'lebron james', 'michael jordan', 'stephen curry',
+            'kevin durant', 'james harden', 'russell westbrook', 'chris paul', 'carmelo anthony',
+            'tracy mcgrady', 'dwight howard', 'shaquille oneal', 'tim duncan', 'magic johnson',
+            'larry bird', 'kareem abdul-jabbar', 'wilt chamberlain', 'bill russell',
+            # 简短版本
+            'yao', 'kobe', 'lebron', 'jordan', 'curry', 'durant', 'harden', 'westbrook',
+            'paul', 'anthony', 'mcgrady', 'howard', 'shaq', 'duncan', 'magic',
+            # 中文名称
+            '姚明', '科比', '詹姆斯', '乔丹', '库里', '杜兰特', '哈登', '威少'
+        ]
+        
+        # 扩展的球队名称库（支持中英文）
+        team_names = [
+            # 英文名称
+            'lakers', 'warriors', 'bulls', 'celtics', 'heat', 'spurs', 'rockets', 'nets',
+            'thunder', 'clippers', 'mavericks', 'knicks', 'hawks', 'pacers', 'cavaliers',
+            'los angeles lakers', 'golden state warriors', 'chicago bulls', 'boston celtics',
+            'miami heat', 'san antonio spurs', 'houston rockets', 'brooklyn nets',
+            # 中文名称
+            '湖人', '勇士', '公牛', '凯尔特人', '热火', '马刺', '火箭', '篮网', '雷霆'
+        ]
+        
+        # 检查球员名称
+        for player in player_names:
+            if player in query_lower:
+                entities['players'].append(player)
+        
+        # 检查球队名称
+        for team in team_names:
+            if team in query_lower:
+                entities['teams'].append(team)
+        
+        # 扩展的属性关键词（支持中英文）
+        attribute_keywords = [
+            # 中文
+            '年龄', '身高', '体重', '得分', '助攻', '篮板', '位置', '球衣号码',
+            # 英文
+            'age', 'old', 'height', 'tall', 'weight', 'position', 'jersey', 'number',
+            'stats', 'points', 'assists', 'rebounds', 'born', 'birthday'
+        ]
+        
         for attr in attribute_keywords:
-            if attr in query:
+            if attr in query_lower:
                 entities['attributes'].append(attr)
         
         return entities

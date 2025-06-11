@@ -30,7 +30,7 @@ class GNNDataBuilder(BaseGraphBuilder):
     """GNN数据构建器 - 将子图转换为torch_geometric.data.Data格式"""
     
     def __init__(self, max_nodes: int = 50, max_hops: int = 2, 
-                 feature_dim: int = 768, include_edge_features: bool = True):
+                 feature_dim: int = 768, include_edge_features: bool = True, nebula_conn=None):
         """初始化GNN数据构建器
         
         Args:
@@ -38,13 +38,15 @@ class GNNDataBuilder(BaseGraphBuilder):
             max_hops: 最大跳数
             feature_dim: 节点特征维度
             include_edge_features: 是否包含边特征
+            nebula_conn: NebulaGraph连接实例
         """
         self.max_nodes = max_nodes
         self.max_hops = max_hops
         self.feature_dim = feature_dim
         self.include_edge_features = include_edge_features
         
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.graph = nx.Graph()
         self.node_features = {}  # 节点特征缓存
         self.edge_features = {}  # 边特征缓存

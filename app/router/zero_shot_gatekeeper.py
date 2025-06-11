@@ -159,11 +159,13 @@ class ZeroShotGatekeeper:
             'filter_method': 'zero_shot_classification'
         }
         
-        # Determine if basketball related
-        is_basketball = (
-            top_label == "basketball sports" and 
-            top_score >= confidence_threshold
-        )
+        # Determine if basketball related - 优化版：basketball sports得分超过阈值即通过
+        basketball_score = all_scores.get("basketball sports", 0.0)
+        is_basketball = basketball_score >= confidence_threshold
+        
+        # 如果不通过但basketball sports得分较高，降低要求
+        if not is_basketball and basketball_score >= 0.15:  # 对姚明等篮球人名放宽标准
+            is_basketball = True
         
         # Update statistics
         processing_time = time.time() - start_time
@@ -171,13 +173,13 @@ class ZeroShotGatekeeper:
         
         if is_basketball:
             self.stats['basketball_passed'] += 1
-            reason = f"Basketball related (confidence: {top_score:.3f})"
+            if top_label == "basketball sports":
+                reason = f"Basketball related (confidence: {top_score:.3f})"
+            else:
+                reason = f"Basketball score sufficient ({basketball_score:.3f}) despite top: {top_label}"
         else:
             self.stats['non_basketball_filtered'] += 1
-            if top_label != "basketball sports":
-                reason = f"Classified as: {top_label} (confidence: {top_score:.3f})"
-            else:
-                reason = f"Basketball related but low confidence (only {top_score:.3f})"
+            reason = f"Classified as: {top_label} (confidence: {top_score:.3f}), basketball score too low: {basketball_score:.3f}"
         
         return is_basketball, reason, analysis
     

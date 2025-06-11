@@ -105,25 +105,44 @@ class DirectProcessor(BaseProcessor):
             'target_entity': None
         }
         
-        # 检测问词
-        question_words = ['多少', '多大', '什么', '哪里', '哪个', '谁', '何时', '怎么']
-        for word in question_words:
-            if word in query:
-                intent['question_words'].append(word)
+        # 扩展的问词检测（支持中英文）
+        question_words_map = {
+            # 中文问词
+            '多少': 'how_many', '多大': 'how_old', '什么': 'what', '哪里': 'where', 
+            '哪个': 'which', '谁': 'who', '何时': 'when', '怎么': 'how',
+            # 英文问词
+            'how': 'how', 'what': 'what', 'where': 'where', 'which': 'which',
+            'who': 'who', 'when': 'when', 'why': 'why', 'is': 'is', 'are': 'are'
+        }
         
-        # 检测属性类型
-        if any(word in query for word in ['年龄', '多大', '岁']):
+        for word, word_type in question_words_map.items():
+            if word in query_lower:
+                intent['question_words'].append(word_type)
+        
+        # 扩展的属性类型检测（支持中英文）
+        if any(word in query_lower for word in ['年龄', '多大', '岁', 'age', 'old', 'years']):
             intent['attribute_type'] = 'age'
-        elif any(word in query for word in ['身高', '多高']):
+        elif any(word in query_lower for word in ['身高', '多高', 'height', 'tall']):
             intent['attribute_type'] = 'height'
-        elif any(word in query for word in ['体重', '多重']):
+        elif any(word in query_lower for word in ['体重', '多重', 'weight']):
             intent['attribute_type'] = 'weight'
-        elif any(word in query for word in ['球队', '效力', '哪个队']):
+        elif any(word in query_lower for word in ['球队', '效力', '哪个队', 'team', 'plays for']):
             intent['attribute_type'] = 'team'
-        elif any(word in query for word in ['位置', '打什么位置']):
+        elif any(word in query_lower for word in ['位置', '打什么位置', 'position']):
             intent['attribute_type'] = 'position'
-        elif any(word in query for word in ['得分', '场均得分']):
+        elif any(word in query_lower for word in ['得分', '场均得分', 'points', 'scoring']):
             intent['attribute_type'] = 'scoring'
+        elif any(word in query_lower for word in ['球衣', '号码', 'jersey', 'number']):
+            intent['attribute_type'] = 'jersey_number'
+        elif any(word in query_lower for word in ['生日', '出生', 'born', 'birthday']):
+            intent['attribute_type'] = 'birthday'
+        
+        # 尝试提取目标实体
+        entities = ProcessorUtils.extract_entities_from_query(query)
+        if entities['players']:
+            intent['target_entity'] = entities['players'][0]
+        elif entities['teams']:
+            intent['target_entity'] = entities['teams'][0]
         
         return intent
     

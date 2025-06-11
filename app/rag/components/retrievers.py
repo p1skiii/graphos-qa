@@ -23,7 +23,7 @@ class SemanticRetriever(BaseRetriever):
     """语义检索器 - 基于句子嵌入的相似度检索"""
     
     def __init__(self, embedding_model: str = None, top_k: int = 5, 
-                 similarity_threshold: float = 0.3):
+                 similarity_threshold: float = 0.3, nebula_conn=None):
         """初始化语义检索器"""
         self.embedding_model_name = embedding_model or Config.EMBEDDING_MODEL
         self.top_k = top_k
@@ -31,7 +31,8 @@ class SemanticRetriever(BaseRetriever):
         
         self.embedding_model = None
         self.node_embeddings = {}
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.is_initialized = False
     
     def initialize(self) -> bool:
@@ -42,10 +43,11 @@ class SemanticRetriever(BaseRetriever):
             # 加载嵌入模型
             self.embedding_model = SentenceTransformer(self.embedding_model_name)
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 预计算节点嵌入
             self._precompute_embeddings()
@@ -170,7 +172,7 @@ class VectorRetriever(BaseRetriever):
     """向量检索器 - 优化的向量相似度检索"""
     
     def __init__(self, embedding_model: str = None, top_k: int = 5, 
-                 use_faiss: bool = False):
+                 use_faiss: bool = False, nebula_conn=None):
         """初始化向量检索器"""
         self.embedding_model_name = embedding_model or Config.EMBEDDING_MODEL
         self.top_k = top_k
@@ -179,7 +181,8 @@ class VectorRetriever(BaseRetriever):
         self.embedding_model = None
         self.vectors = None
         self.node_index = {}
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.is_initialized = False
     
     def initialize(self) -> bool:
@@ -190,10 +193,11 @@ class VectorRetriever(BaseRetriever):
             # 加载嵌入模型
             self.embedding_model = SentenceTransformer(self.embedding_model_name)
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 构建向量索引
             self._build_vector_index()
@@ -292,7 +296,7 @@ class KeywordRetriever(BaseRetriever):
     """关键词检索器 - 基于TF-IDF的关键词匹配"""
     
     def __init__(self, top_k: int = 5, use_tfidf: bool = True, 
-                 min_score: float = 0.1):
+                 min_score: float = 0.1, nebula_conn=None):
         """初始化关键词检索器"""
         self.top_k = top_k
         self.use_tfidf = use_tfidf
@@ -302,7 +306,8 @@ class KeywordRetriever(BaseRetriever):
         self.tfidf_matrix = None
         self.documents = []
         self.node_index = {}
-        self.nebula_conn = NebulaGraphConnection()
+        # 使用传递的连接或创建新连接
+        self.nebula_conn = nebula_conn if nebula_conn is not None else NebulaGraphConnection()
         self.is_initialized = False
     
     def initialize(self) -> bool:
@@ -310,10 +315,11 @@ class KeywordRetriever(BaseRetriever):
         try:
             logger.info("🔄 初始化关键词检索器...")
             
-            # 连接数据库
-            if not self.nebula_conn.connect():
-                logger.error("❌ NebulaGraph连接失败")
-                return False
+            # 检查数据库连接
+            if not self.nebula_conn.session:
+                if not self.nebula_conn.connect():
+                    logger.error("❌ NebulaGraph连接失败")
+                    return False
             
             # 构建TF-IDF索引
             self._build_tfidf_index()
@@ -453,16 +459,17 @@ class HybridRetriever(BaseRetriever):
     """混合检索器 - 结合多种检索策略"""
     
     def __init__(self, semantic_weight: float = 0.5, keyword_weight: float = 0.3, 
-                 vector_weight: float = 0.2, top_k: int = 5):
+                 vector_weight: float = 0.2, top_k: int = 5, nebula_conn=None):
         """初始化混合检索器"""
         self.semantic_weight = semantic_weight
         self.keyword_weight = keyword_weight
         self.vector_weight = vector_weight
         self.top_k = top_k
         
-        self.semantic_retriever = SemanticRetriever()
-        self.keyword_retriever = KeywordRetriever()
-        self.vector_retriever = VectorRetriever()
+        # 传递连接给子检索器
+        self.semantic_retriever = SemanticRetriever(nebula_conn=nebula_conn)
+        self.keyword_retriever = KeywordRetriever(nebula_conn=nebula_conn)
+        self.vector_retriever = VectorRetriever(nebula_conn=nebula_conn)
         self.is_initialized = False
     
     def initialize(self) -> bool:

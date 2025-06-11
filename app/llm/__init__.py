@@ -46,5 +46,7 @@ __all__ = [
     
     # 工厂
     'LLMFactory',
-    'llm_factory'
+    'LLMSystem',
+    'llm_factory',
+    'create_llm_system'
 ]

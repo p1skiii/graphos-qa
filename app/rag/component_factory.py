@@ -7,6 +7,9 @@ from typing import Dict, Any, List, Optional, Type, Union
 from dataclasses import dataclass
 import logging
 
+# 导入全局连接
+from app.database.nebula_connection import nebula_conn
+
 logger = logging.getLogger(__name__)
 
 # =============================================================================
@@ -130,7 +133,16 @@ class ComponentFactory:
             raise ValueError(f"未找到检索器: {config.component_name}")
         
         retriever_class = self._retriever_registry[config.component_name]
-        retriever = retriever_class(**config.config)
+        
+        try:
+            # 尝试使用增强配置（包含连接）
+            enhanced_config = config.config.copy()
+            enhanced_config['nebula_conn'] = nebula_conn
+            retriever = retriever_class(**enhanced_config)
+        except TypeError:
+            # 如果构造函数不支持nebula_conn参数，使用原始配置
+            logger.warning(f"检索器 {config.component_name} 不支持nebula_conn参数，使用原始配置")
+            retriever = retriever_class(**config.config)
         
         logger.info(f"🔧 创建检索器: {config.component_name}")
         return retriever
@@ -141,7 +153,16 @@ class ComponentFactory:
             raise ValueError(f"未找到图构建器: {config.component_name}")
         
         builder_class = self._graph_builder_registry[config.component_name]
-        builder = builder_class(**config.config)
+        
+        try:
+            # 尝试使用增强配置（包含连接）
+            enhanced_config = config.config.copy()
+            enhanced_config['nebula_conn'] = nebula_conn
+            builder = builder_class(**enhanced_config)
+        except TypeError:
+            # 如果构造函数不支持nebula_conn参数，使用原始配置
+            logger.warning(f"图构建器 {config.component_name} 不支持nebula_conn参数，使用原始配置")
+            builder = builder_class(**config.config)
         
         logger.info(f"🔧 创建图构建器: {config.component_name}")
         return builder
@@ -152,7 +173,18 @@ class ComponentFactory:
             raise ValueError(f"未找到文本化器: {config.component_name}")
         
         textualizer_class = self._textualizer_registry[config.component_name]
-        textualizer = textualizer_class(**config.config)
+        
+        try:
+            # 尝试使用增强配置（文本化器通常不需要连接）
+            enhanced_config = config.config.copy()
+            enhanced_config['nebula_conn'] = nebula_conn
+            textualizer = textualizer_class(**enhanced_config)
+        except TypeError:
+            # 如果构造函数不支持nebula_conn参数，使用原始配置
+            textualizer = textualizer_class(**config.config)
+        
+        logger.info(f"🔧 创建文本化器: {config.component_name}")
+        return textualizer
         
         logger.info(f"🔧 创建文本化器: {config.component_name}")
         return textualizer
@@ -340,6 +372,18 @@ class DefaultConfigs:
         )
     
     @staticmethod
+    def get_qa_textualizer_config() -> ComponentConfig:
+        """QA文本化器配置"""
+        return ComponentConfig(
+            component_type='textualizer',
+            component_name='qa',
+            config={
+                'focus_on_query': True,
+                'max_tokens': 1500
+            }
+        )
+    
+    @staticmethod
     def get_gnn_graph_builder_config() -> ComponentConfig:
         """GNN图构建器配置"""
         return ComponentConfig(
@@ -367,7 +411,7 @@ class ProcessorDefaultConfigs:
             processor_name='direct',
             retriever_config=DefaultConfigs.get_keyword_retriever_config(),
             graph_builder_config=DefaultConfigs.get_simple_graph_builder_config(),
-            textualizer_config=DefaultConfigs.get_compact_textualizer_config(),
+            textualizer_config=DefaultConfigs.get_qa_textualizer_config(),  # 使用QA文本化器以支持属性信息
             cache_enabled=True,
             cache_ttl=7200,  # 2小时
             max_tokens=2000

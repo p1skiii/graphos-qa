@@ -145,7 +145,7 @@ def test_retriever():
 
 @api_bp.route('/api/query', methods=['POST'])
 def process_query():
-    """处理查询请求 - 临时端点，等处理器完成后替换"""
+    """处理查询请求 - 完整的端到端流水线"""
     try:
         data = request.get_json()
         if not data or 'query' not in data:
@@ -155,30 +155,68 @@ def process_query():
             }), 400
         
         query = data['query']
+        context = data.get('context', None)
         
-        # 临时响应，说明新系统正在构建中
-        return jsonify({
-            'status': 'info',
-            'message': '新的组件工厂架构正在构建中',
-            'query': query,
-            'note': '处理器模块完成后将提供完整的查询功能',
-            'available_test_endpoints': [
-                '/api/test_retriever - 测试单个检索器',
-                '/api/components - 查看可用组件',
-                '/api/status - 查看系统状态'
-            ]
-        })
+        # 导入查询流水线
+        from app.api.query_pipeline import query_pipeline
+        
+        # 处理查询
+        result = query_pipeline.process_query(query, context)
+        
+        # 构建响应
+        if result.success:
+            response = {
+                'status': 'success',
+                'query': result.query,
+                'intent': result.intent,
+                'processor_used': result.processor_used,
+                'answer': result.llm_response or result.rag_result.get('contextualized_text', ''),
+                'rag_result': result.rag_result,
+                'llm_response': result.llm_response,
+                'processing_time': result.total_time,
+                'metadata': result.metadata
+            }
+            
+            logger.info(f"✅ 查询处理成功: {query} -> {result.intent} -> {result.processor_used}")
+            return jsonify(response)
+        else:
+            error_response = {
+                'status': 'error',
+                'query': result.query,
+                'error': result.error,
+                'processing_time': result.total_time,
+                'metadata': result.metadata
+            }
+            
+            logger.error(f"❌ 查询处理失败: {query} -> {result.error}")
+            return jsonify(error_response), 500
         
     except Exception as e:
-        logger.error(f"查询处理失败: {str(e)}")
+        logger.error(f"API查询处理异常: {str(e)}")
         return jsonify({
             'status': 'error',
-            'message': f'查询处理失败: {str(e)}'
+            'message': f'查询处理异常: {str(e)}'
         }), 500
 
 @api_bp.route('/api/health')
 def health_check():
     """健康检查"""
+    try:
+        from app.api.query_pipeline import query_pipeline
+        
+        health_status = query_pipeline.health_check()
+        
+        # 确定整体状态代码
+        status_code = 200 if health_status['status'] == 'healthy' else 503
+        
+        return jsonify(health_status), status_code
+        
+    except Exception as e:
+        logger.error(f"健康检查失败: {str(e)}")
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e)
+        }), 503
     try:
         # 检查核心组件是否可导入
         from app.rag.component_factory import component_factory
@@ -197,6 +235,63 @@ def health_check():
         return jsonify({
             'status': 'unhealthy',
             'error': str(e)
+        }), 500
+
+@api_bp.route('/api/pipeline/stats')
+def get_pipeline_stats():
+    """获取流水线统计信息"""
+    try:
+        from app.api.query_pipeline import query_pipeline
+        
+        stats = query_pipeline.get_stats()
+        
+        return jsonify({
+            'status': 'success',
+            'stats': stats
+        })
+        
+    except Exception as e:
+        logger.error(f"获取流水线统计失败: {str(e)}")
+        return jsonify({
+            'status': 'error',
+            'message': f'获取统计信息失败: {str(e)}'
+        }), 500
+
+@api_bp.route('/api/pipeline/initialize', methods=['POST'])
+def initialize_pipeline():
+    """初始化查询流水线"""
+    try:
+        data = request.get_json() or {}
+        
+        from app.api.query_pipeline import query_pipeline
+        
+        # 初始化LLM系统（如果配置启用）
+        llm_config = data.get('llm_config', {})
+        query_pipeline.config.update(llm_config)
+        
+        # 默认启用LLM
+        if query_pipeline.config.get('llm_enabled', True):
+            llm_success = query_pipeline.initialize_llm()
+            
+            return jsonify({
+                'status': 'success',
+                'message': '流水线初始化完成',
+                'llm_enabled': query_pipeline.llm_enabled,
+                'llm_initialized': llm_success
+            })
+        else:
+            return jsonify({
+                'status': 'success',
+                'message': '流水线已就绪（LLM未启用）',
+                'llm_enabled': False,
+                'llm_initialized': False
+            })
+        
+    except Exception as e:
+        logger.error(f"流水线初始化失败: {str(e)}")
+        return jsonify({
+            'status': 'error',
+            'message': f'初始化失败: {str(e)}'
         }), 500
 
 # 错误处理器

@@ -436,13 +436,15 @@ class QATextualizer(BaseTextualizer):
         query_lower = query.lower()
         
         # 根据查询类型生成文本
-        if "年龄" in query_lower or "多大" in query_lower:
+        if ("年龄" in query_lower or "多大" in query_lower or 
+            "age" in query_lower or "old" in query_lower):
             text_parts.append(self._format_age_info(nodes, query))
         
-        elif "球队" in query_lower or "效力" in query_lower:
+        elif ("球队" in query_lower or "效力" in query_lower or 
+              "team" in query_lower or "serve" in query_lower):
             text_parts.append(self._format_team_info(nodes, edges, query))
         
-        elif "球员" in query_lower:
+        elif ("球员" in query_lower or "player" in query_lower):
             text_parts.append(self._format_player_info(nodes, edges, query))
         
         else:
