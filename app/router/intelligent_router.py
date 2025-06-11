@@ -1,5 +1,5 @@
 """
-智能路由器 - 整合篮球过滤器和BERT分类器
+智能路由器 - 现代化三级瀑布流架构
 """
 import time
 import logging
@@ -7,7 +7,7 @@ from typing import Dict, Any, List
 from pathlib import Path
 import json
 
-from .basketball_filter import basketball_filter
+from .zero_shot_gatekeeper import zero_shot_gatekeeper
 from .intent_classifier import intent_classifier
 
 logger = logging.getLogger(__name__)
@@ -16,25 +16,41 @@ class IntelligentRouter:
     """智能路由器"""
     
     def __init__(self):
-        self.basketball_filter = basketball_filter
-        self.intent_classifier = intent_classifier
+        # 现代化三级瀑布流组件
+        self.zero_shot_gatekeeper = zero_shot_gatekeeper  # 第一级：零样本门卫过滤器
+        self.intent_classifier = intent_classifier        # 第二级：BERT精细分诊台
         
         # 路由统计
         self.stats = {
             'total_queries': 0,
+            'gatekeeper_filtered': 0,      # 门卫过滤数量
             'non_basketball_filtered': 0,
-            'simple_queries': 0,
-            'complex_queries': 0,
+            'attribute_queries': 0,        # 属性查询
+            'simple_relation_queries': 0,  # 简单关系查询  
+            'complex_relation_queries': 0, # 复杂关系查询
+            'comparative_queries': 0,      # 比较查询
+            'domain_chitchat': 0,         # 领域闲聊
             'avg_processing_time': 0.0,
+            'gatekeeper_time': 0.0,       # 门卫处理时间
             'bert_classification_time': 0.0,
             'filter_time': 0.0
         }
         
-        # 路由映射
+        # 三级瀑布流路由映射
         self.route_mapping = {
-            'simple': 'direct',      # 简单查询 -> 直接检索
-            'complex': 'g_retriever', # 复杂查询 -> G-Retriever
-            'non_basketball': 'fallback'  # 非篮球 -> 回退处理
+            # 第一级：门卫过滤结果
+            'non_basketball': 'fallback',
+            
+            # 第二级：BERT精细分类结果 -> 第三级：专家门诊路由
+            'ATTRIBUTE_QUERY': 'direct_db_lookup',        # 属性查询 -> 直接数据库查询
+            'SIMPLE_RELATION_QUERY': 'g_retriever_simple', # 简单关系 -> 简化G-Retriever
+            'COMPLEX_RELATION_QUERY': 'g_retriever_full',  # 复杂关系 -> 完整G-Retriever
+            'COMPARATIVE_QUERY': 'comparison_logic',       # 比较查询 -> 比较处理器
+            'DOMAIN_CHITCHAT': 'chitchat_llm',            # 领域闲聊 -> 聊天LLM
+            
+            # 向后兼容（旧版本）
+            'simple': 'direct_db_lookup',
+            'complex': 'g_retriever_full'
         }
         
         # 结果目录
@@ -61,52 +77,64 @@ class IntelligentRouter:
             raise
     
     def route_query(self, user_input: str) -> Dict[str, Any]:
-        """路由用户查询"""
+        """
+        三级瀑布流路由查询
+        
+        第一级：门卫 - 极速关键词过滤（亚毫秒级）
+        第二级：BERT分诊台 - 精细意图分类（5类）
+        第三级：专家门诊 - 智能处理器选择
+        """
         
         start_time = time.time()
         
-        # Step 1: 篮球领域过滤
-        filter_start = time.time()
-        is_basketball, filter_reason, filter_analysis = self.basketball_filter.is_basketball_domain(user_input)
-        filter_time = time.time() - filter_start
+        # 第一级：零样本门卫过滤 - 极速拦截明显无关查询
+        gatekeeper_start = time.time()
+        is_domain_related, gatekeeper_reason, gatekeeper_analysis = self.zero_shot_gatekeeper.smart_filter(user_input)
+        gatekeeper_time = time.time() - gatekeeper_start
         
-        if not is_basketball:
-            # 非篮球领域，直接返回
+        if not is_domain_related:
+            # 门卫确认为非篮球领域，直接返回
             result = {
                 'intent': 'non_basketball',
-                'confidence': 0.95,
+                'confidence': gatekeeper_analysis.get('top_confidence', 0.95),
                 'processor': self.route_mapping['non_basketball'],
-                'reason': f'Basketball filter: {filter_reason}',
+                'reason': f'Zero-shot门卫过滤: {gatekeeper_reason}',
                 'original_text': user_input,
-                'processing_path': 'basketball_filter',
-                'filter_analysis': filter_analysis,
-                'filter_time': filter_time,
+                'processing_path': 'zero_shot_gatekeeper_filter',
+                'gatekeeper_analysis': gatekeeper_analysis,
+                'gatekeeper_time': gatekeeper_time,
                 'bert_time': 0.0
             }
-        else:
-            # Step 2: BERT意图分类
-            bert_start = time.time()
-            bert_intent, bert_confidence = self.intent_classifier.classify(user_input)
-            bert_time = time.time() - bert_start
             
-            # Step 3: 路由决策
-            processor = self.route_mapping[bert_intent]
-            
-            result = {
-                'intent': bert_intent,
-                'confidence': bert_confidence,
-                'processor': processor,
-                'reason': f'BERT classification: {bert_intent} (conf: {bert_confidence:.3f})',
-                'original_text': user_input,
-                'processing_path': 'bert_classification',
-                'filter_analysis': filter_analysis,
-                'filter_time': filter_time,
-                'bert_time': bert_time
-            }
+            # 更新统计
+            total_time = time.time() - start_time
+            self._update_stats(result, total_time, gatekeeper_time, 0.0)
+            self._log_routing(result, total_time)
+            return result
+        
+        # 第二级：BERT分诊台 - 精细意图分类
+        bert_start = time.time()
+        bert_intent, bert_confidence = self.intent_classifier.classify(user_input)
+        bert_time = time.time() - bert_start
+        
+        # 第三级：专家门诊 - 根据意图选择最佳处理器
+        processor = self.route_mapping.get(bert_intent, 'g_retriever_full')  # 默认使用完整G-Retriever
+        
+        result = {
+            'intent': bert_intent,
+            'confidence': bert_confidence,
+            'processor': processor,
+            'reason': f'三级路由: Zero-shot门卫通过 → BERT分类: {bert_intent} (置信度: {bert_confidence:.3f}) → 专家门诊: {processor}',
+            'original_text': user_input,
+            'processing_path': 'three_tier_routing',
+            'gatekeeper_analysis': gatekeeper_analysis,
+            'gatekeeper_time': gatekeeper_time,
+            'bert_time': bert_time
+        }
         
         # 更新统计
         total_time = time.time() - start_time
-        self._update_stats(result, total_time, filter_time, result.get('bert_time', 0))
+        self._update_stats(result, total_time, gatekeeper_time, bert_time)
         
         # 记录日志
         self._log_routing(result, total_time)
@@ -128,9 +156,22 @@ class IntelligentRouter:
         
         self.stats['total_queries'] += 1
         
+        # 更新精细分类统计
         if result['intent'] == 'non_basketball':
-            self.stats['non_basketball_filtered'] += 1
-        elif result['intent'] == 'simple':
+            self.stats['gatekeeper_filtered'] += 1
+        elif result['intent'] == 'ATTRIBUTE_QUERY':
+            self.stats['attribute_queries'] += 1
+        elif result['intent'] == 'SIMPLE_RELATION_QUERY':
+            self.stats['simple_relation_queries'] += 1
+        elif result['intent'] == 'COMPLEX_RELATION_QUERY':
+            self.stats['complex_relation_queries'] += 1
+        elif result['intent'] == 'COMPARATIVE_QUERY':
+            self.stats['comparative_queries'] += 1
+        elif result['intent'] == 'DOMAIN_CHITCHAT':
+            self.stats['domain_chitchat'] += 1
+        
+        # 向后兼容统计
+        if result['intent'] == 'simple':
             self.stats['simple_queries'] += 1
         elif result['intent'] == 'complex':
             self.stats['complex_queries'] += 1
@@ -157,7 +198,7 @@ class IntelligentRouter:
             'processor': result['processor'],
             'path': result['processing_path'],
             'time_ms': total_time * 1000,
-            'filter_time_ms': result['filter_time'] * 1000,
+            'gatekeeper_time_ms': result.get('gatekeeper_time', 0) * 1000,
             'bert_time_ms': result.get('bert_time', 0) * 1000,
             'reason': result['reason']
         }

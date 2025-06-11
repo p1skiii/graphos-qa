@@ -1,0 +1,2502 @@
+[
+  {
+    "text":"Review Suns's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"When was Allen Iverson born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Tell me about Kevin Durant's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which players are on Lakers?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which team has more championship potential, Kings or Hornets?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Hornets founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Nuggets's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players are on Hawks?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who has better scoring ability, Vince Carter or Wilt Chamberlain?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Tell me about Jeremy Lin's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Dwyane Wade",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"When was Spurs founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is LeBron James's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Bill Russell learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Jeremy Lin or Tracy McGrady?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Where is Raptors's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Kevin Garnett and Steve Nash's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Wilt Chamberlain and Scottie Pippen?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who are Suns's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Kareem Abdul-Jabbar and Tracy McGrady?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who owns Trail Blazers?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Nuggets's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Trail Blazers's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Kevin Garnett learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Tracy McGrady and Zhizhi Wang",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Summarize Pacers's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Tracy McGrady or Kevin Garnett?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Clippers or Suns?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coaches did Scottie Pippen work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Zhizhi Wang and Scottie Pippen",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare and analyze Bill Russell and Jeremy Lin's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Tracy McGrady and Jeremy Lin's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Kareem Abdul-Jabbar's impact on Thunder's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How old is Yi Jianlian?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Bucks or Nets?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Where is Bucks's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who has better scoring ability, Bill Russell or Kareem Abdul-Jabbar?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Where is Magic's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What has basketball brought to you?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Compare LeBron James and Kevin Durant's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What jersey number does Magic Johnson wear?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which coach did Steve Nash learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who has better scoring ability, Kevin Garnett or Kevin Durant?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Tell me about Michael Jordan's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Compare Dwyane Wade and Kareem Abdul-Jabbar's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which team does Mengke Bateer play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Vince Carter's impact on Bulls's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What position does Michael Jordan play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What jersey number does Stephen Curry wear?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Evaluate the historical status of Magic Johnson vs Tracy McGrady",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Vince Carter and Mengke Bateer's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Zhizhi Wang or Kobe Bryant?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players played for both Raptors and Wizards?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coaches did Tracy McGrady work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Tim Duncan's impact on Trail Blazers's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How old is Larry Bird?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is Clippers's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Pelicans and Hawks's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Evaluate the historical status of Zhizhi Wang vs Wilt Chamberlain",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who does Shaquille O'Neal play with?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What jersey number does Jeremy Lin wear?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which team does Kobe Bryant play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Cavaliers's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What does a basketball hero look like in your mind?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Thunder's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, 76ers or Mavericks?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Summarize Wizards's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Kareem Abdul-Jabbar and Magic Johnson",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What makes basketball so appealing?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Bill Russell born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Summarize Celtics's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Heat vs Celtics, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who are Bill Russell's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Tim Duncan's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Rockets and Pelicans's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Compare and analyze Jeremy Lin and Scottie Pippen's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Dwyane Wade or Tracy McGrady?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who does Jeremy Lin play with?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Yao Ming's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What has basketball brought to you?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Tell me about Michael Jordan's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Where is Warriors's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Tell me about Tim Duncan's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is Bill Russell's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Larry Bird and Kobe Bryant's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which players are on Raptors?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coach did Bill Russell learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players were teammates with Zhizhi Wang and also won championships?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are Stephen Curry's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Summarize Bucks's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who owns Mavericks?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Tim Duncan's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Larry Bird learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Pistons's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Pelicans or Mavericks?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Wilt Chamberlain's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare and analyze Zhizhi Wang and Allen Iverson's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Zhizhi Wang and Tim Duncan",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"When was Jazz founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who are Kings's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review 76ers's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Mengke Bateer's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Review Bulls's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Where is Bucks's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Compare Larry Bird and Shaquille O'Neal's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Tim Duncan's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Magic Johnson's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players played for both Nuggets and Kings?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Jazz or Clippers?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which players are on Warriors?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Stephen Curry's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on Pistons?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare and analyze Scottie Pippen and Zhizhi Wang's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which team does Allen Iverson play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Hornets and Lakers's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with LeBron James",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Review Knicks's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Wilt Chamberlain's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Heat's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Larry Bird's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players are on Rockets?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Steve Nash or Larry Bird?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Dwyane Wade and Vince Carter?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Mengke Bateer's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Pelicans's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Trail Blazers's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are Tim Duncan's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is 76ers's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"When was Heat founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Is the NBA still entertaining nowadays?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"How tall is LeBron James?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How old is Tim Duncan?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who does LeBron James play with?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How tall is Zhizhi Wang?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is Nets's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on 76ers?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Warriors's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Magic Johnson's impact on Lakers's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coaches did Vince Carter work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Kevin Garnett learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Tracy McGrady",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Scottie Pippen's impact on 76ers's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players were teammates with Magic Johnson and also won championships?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Dwyane Wade or Kobe Bryant?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which players played for both Clippers and Rockets?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Wilt Chamberlain's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Jeremy Lin or Kevin Durant?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Warriors and Magic's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who owns Mavericks?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"When was Kings founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Hawks's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which coaches did Larry Bird work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on Pistons?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who owns Nets?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which coaches did Yao Ming work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Tracy McGrady's impact on Suns's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Kobe Bryant's impact on Nuggets's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coach did Mengke Bateer learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players played for both Lakers and Celtics?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"When was Kevin Durant born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"When was Vince Carter born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How old is Magic Johnson?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Kareem Abdul-Jabbar and Magic Johnson?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Michael Jordan",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Where is Wizards's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Tim Duncan and Kevin Garnett's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"When was Bucks founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare Thunder and Knicks's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What jersey number does Steve Nash wear?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Steve Nash and Allen Iverson?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Mengke Bateer's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Hornets or Spurs?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Hawks's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Kobe Bryant and Mengke Bateer's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Pacers's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Tell me about Zhizhi Wang's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Heat's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Bill Russell and Stephen Curry's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How tall is Kareem Abdul-Jabbar?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Kings vs Pelicans, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Kobe Bryant",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Nuggets's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How old is LeBron James?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What jersey number does Kobe Bryant wear?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Summarize Knicks's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What position does Dwyane Wade play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How old is Tracy McGrady?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"When was Kevin Garnett born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Hornets's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"How tall is Magic Johnson?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Evaluate the historical status of Bill Russell vs Michael Jordan",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze Kevin Garnett's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Allen Iverson and Kevin Durant's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"List all MVP players who had interactions with Mengke Bateer",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Scottie Pippen's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Is the NBA still entertaining nowadays?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Zhizhi Wang's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Tell me about Kobe Bryant's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Kings vs Pacers, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are Larry Bird's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Steve Nash and Tracy McGrady's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Mavericks's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which coaches did Kareem Abdul-Jabbar work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Bill Russell's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Kevin Durant",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Michael Jordan and Steve Nash",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Where is Lakers's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Summarize Spurs's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Nets and Warriors's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Kobe Bryant and Kareem Abdul-Jabbar's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who are Pistons's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coaches did Jeremy Lin work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players were teammates with Stephen Curry and also won championships?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who does Dirk Nowitzki play with?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Vince Carter's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Shaquille O'Neal born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Tell me about Kobe Bryant's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Mengke Bateer or Wilt Chamberlain?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Zhizhi Wang and Kobe Bryant",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Scottie Pippen and Steve Nash",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who owns Pacers?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Yao Ming and Dwyane Wade's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are Bill Russell's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Jazz's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Bucks's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze Bill Russell's impact on Nuggets's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Bill Russell and Kevin Durant?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Allen Iverson and Steve Nash",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Where is Lakers's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who owns Nuggets?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Summarize Warriors's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Bulls vs Pistons, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Tell me about Steve Nash's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which players played for both Suns and Kings?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Vince Carter's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who are Larry Bird's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Summarize Pelicans's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, Kings or Celtics?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Mavericks's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Michael Jordan or Vince Carter?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Raptors's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"List all MVP players who had interactions with Stephen Curry",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Tim Duncan and Dirk Nowitzki",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Kareem Abdul-Jabbar's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Is the NBA still entertaining nowadays?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coach did Allen Iverson learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What is Larry Bird's height?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare Jeremy Lin and Zhizhi Wang's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Where is Pacers's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which coaches did Dirk Nowitzki work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How tall is Allen Iverson?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Mengke Bateer and Zhizhi Wang",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"When was Kareem Abdul-Jabbar born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players played for both Hornets and Bucks?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Yi Jianlian's impact on Pacers's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players played for both Trail Blazers and Warriors?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How tall is Wilt Chamberlain?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Heat's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What position does Dwyane Wade play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare Lakers and Hawks's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze Stephen Curry's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Magic Johnson and LeBron James's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Vince Carter and Tracy McGrady's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze Yi Jianlian's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on Kings?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Knicks's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze the leadership differences between Shaquille O'Neal and Yi Jianlian",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who are Jazz's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How tall is Scottie Pippen?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Kings's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What does a basketball hero look like in your mind?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which coaches did Shaquille O'Neal work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on Bulls?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Heat's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Dirk Nowitzki learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players played for both Bulls and Nuggets?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Nuggets's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Review Warriors's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Pelicans's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What has basketball brought to you?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What makes basketball so appealing?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who are Mavericks's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Timberwolves's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Which players played for both Hawks and Magic?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What is Scottie Pippen's height?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Pelicans vs Warriors, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How tall is Kobe Bryant?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"How tall is Vince Carter?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Evaluate the historical status of Kobe Bryant vs Tracy McGrady",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Tell me about Kareem Abdul-Jabbar's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Magic Johnson or Mengke Bateer?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze Kevin Durant's impact on Thunder's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Cavaliers's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Where is Hornets's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which team does Magic Johnson play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Kevin Durant and Jeremy Lin",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Yao Ming and Kevin Durant's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"When was Zhizhi Wang born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Review Hawks's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Nets and Raptors's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are Yao Ming's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Where is Pacers's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is Stephen Curry's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Nuggets's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Is the NBA still entertaining nowadays?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What are the differences in technical styles between Larry Bird and Scottie Pippen?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who has better scoring ability, Tracy McGrady or Steve Nash?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Review Pacers's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which team has more championship potential, Pelicans or Heat?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which coach did Dwyane Wade learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team does Michael Jordan play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Michael Jordan",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Larry Bird's impact on Bulls's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare and analyze Yao Ming and Allen Iverson's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What does a basketball hero look like in your mind?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Review Lakers's important trades and transfers in history",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Yao Ming and Wilt Chamberlain's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Analyze Yao Ming's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"When was Bucks founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Explore the mentorship relationship between Scottie Pippen and Kevin Durant",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What position does Vince Carter play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Scottie Pippen's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Yi Jianlian's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"When was Yao Ming born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What makes basketball so appealing?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Kevin Garnett's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Kareem Abdul-Jabbar and Dwyane Wade",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"How old is Bill Russell?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What position does Magic Johnson play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare Kings and Jazz's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Timberwolves's captain?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players played for both Spurs and Nuggets?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What makes basketball so appealing?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze Tim Duncan's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Who are Kareem Abdul-Jabbar's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Wilt Chamberlain's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What is Tracy McGrady's height?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Summarize Bulls's core roster changes during their dynasty period",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Steve Nash learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What does a basketball hero look like in your mind?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What position does Mengke Bateer play?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Evaluate the historical status of Kevin Durant vs Shaquille O'Neal",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which coach did Kobe Bryant learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players were teammates with Kevin Durant and also won championships?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Which coach did Zhizhi Wang learn from?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team has more championship potential, 76ers or Rockets?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who is Bill Russell's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which players are on Clippers?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Vince Carter's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Shaquille O'Neal's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who does Vince Carter play with?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Analyze Kevin Durant's career trajectory and key milestones",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Nets and Mavericks's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who are Kobe Bryant's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team does Yao Ming play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What makes basketball so appealing?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"List all MVP players who had interactions with Kevin Garnett",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What do you think is the spirit of basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Which players played for both Bulls and Hawks?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Wilt Chamberlain's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who is Magic Johnson's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"What are your thoughts on basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Compare Dirk Nowitzki and Tracy McGrady's career achievements",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Allen Iverson's agent?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"When was Michael Jordan born?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Stephen Curry and Jeremy Lin?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Dirk Nowitzki and Yao Ming",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Compare Suns and Timberwolves's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Tell me about Vince Carter's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Jazz vs Warriors, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Who owns Hawks?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Heat vs Mavericks, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Explore the mentorship relationship between Steve Nash and Magic Johnson",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Tell me about Tracy McGrady's career data",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Trail Blazers's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Hornets founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How do you evaluate modern basketball development?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Shaquille O'Neal's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Compare and analyze Tracy McGrady and Wilt Chamberlain's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"List all MVP players who had interactions with Stephen Curry",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What does a basketball hero look like in your mind?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who are Dwyane Wade's teammates?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Which team does LeBron James play for?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who is Suns's current coach?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Compare and analyze Zhizhi Wang and Tracy McGrady's playing styles",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Talk about basketball culture's influence",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who is Tim Duncan's coach?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  },
+  {
+    "text":"Who do you think is the GOAT?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Explore the mentorship relationship between Wilt Chamberlain and Scottie Pippen",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Larry Bird and Kareem Abdul-Jabbar?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Raptors vs Clippers, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How old is Bill Russell?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What do you think about basketball commercialization?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Thunder founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"What attracts you most about basketball?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"What is Zhizhi Wang's height?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Analyze Bill Russell's impact on Jazz's historical status",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Share your basketball story",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"When was Cavaliers founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Share your favorite basketball moments",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze the evolution of modern basketball tactical systems",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Share the inspiration basketball brings to people",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Analyze the leadership differences between Steve Nash and Kareem Abdul-Jabbar",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are the differences in technical styles between Magic Johnson and Dwyane Wade?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"When was Suns founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"How has basketball changed things?",
+    "label":4,
+    "intent":"DOMAIN_CHITCHAT"
+  },
+  {
+    "text":"Who has better scoring ability, Vince Carter or Zhizhi Wang?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Which coaches did Kevin Durant work with throughout their career?",
+    "label":2,
+    "intent":"COMPLEX_RELATION_QUERY"
+  },
+  {
+    "text":"Evaluate the historical status of Steve Nash vs Kevin Garnett",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How tall is Scottie Pippen?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Thunder vs Celtics, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"How old is Larry Bird?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"When was Timberwolves founded?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Where is Wizards's home court?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Trail Blazers vs 76ers, which team is stronger?",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Heat and Pacers's historical records",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"Compare Yao Ming and Vince Carter's influence on basketball",
+    "label":3,
+    "intent":"COMPARATIVE_QUERY"
+  },
+  {
+    "text":"What are Allen Iverson's basic stats?",
+    "label":0,
+    "intent":"ATTRIBUTE_QUERY"
+  },
+  {
+    "text":"Who are Thunder's star players?",
+    "label":1,
+    "intent":"SIMPLE_RELATION_QUERY"
+  }
+]

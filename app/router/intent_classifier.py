@@ -24,15 +24,27 @@ logger = logging.getLogger(__name__)
 class BERTIntentClassifier:
     """BERT意图分类器"""
     
-    def __init__(self, model_name: str = "bert-base-chinese"):
+    def __init__(self, model_name: str = "bert-base-uncased"):
         self.model_name = model_name
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.tokenizer = None
         self.model = None
         
-        # 标签映射
-        self.id2label = {0: "simple", 1: "complex"}
-        self.label2id = {"simple": 0, "complex": 1}
+        # 精细化意图标签映射（5类分类）
+        self.id2label = {
+            0: "ATTRIBUTE_QUERY",        # 属性查询
+            1: "SIMPLE_RELATION_QUERY",  # 简单关系查询  
+            2: "COMPLEX_RELATION_QUERY", # 复杂关系查询
+            3: "COMPARATIVE_QUERY",      # 比较查询
+            4: "DOMAIN_CHITCHAT"         # 领域内闲聊
+        }
+        self.label2id = {
+            "ATTRIBUTE_QUERY": 0,
+            "SIMPLE_RELATION_QUERY": 1, 
+            "COMPLEX_RELATION_QUERY": 2,
+            "COMPARATIVE_QUERY": 3,
+            "DOMAIN_CHITCHAT": 4
+        }
         
         # 路径配置
         self.model_dir = Path("models")
@@ -43,7 +55,7 @@ class BERTIntentClassifier:
         logger.info(f"💻 设备: {self.device}")
         logger.info(f"🤖 模型: {self.model_name}")
     
-    def load_model(self, model_path: str = None):
+    def load_model(self, model_path: str = "models/bert_english_5class_final"):
         """加载模型"""
         
         if model_path and Path(model_path).exists():
@@ -57,7 +69,7 @@ class BERTIntentClassifier:
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
             self.model = AutoModelForSequenceClassification.from_pretrained(
                 self.model_name,
-                num_labels=2,
+                num_labels=5,  # 5类精细分类
                 id2label=self.id2label,
                 label2id=self.label2id
             )
@@ -77,8 +89,9 @@ class BERTIntentClassifier:
         # 数据统计
         logger.info(f"📈 数据统计:")
         logger.info(f"   总数据量: {len(df)}")
-        logger.info(f"   Simple查询: {(df['label'] == 0).sum()}")
-        logger.info(f"   Complex查询: {(df['label'] == 1).sum()}")
+        for label_id, label_name in self.id2label.items():
+            count = (df['label'] == label_id).sum()
+            logger.info(f"   {label_name}: {count} samples")
         
         # 划分训练集和测试集
         train_texts, test_texts, train_labels, test_labels = train_test_split(
@@ -151,9 +164,11 @@ class BERTIntentClassifier:
             weight_decay=0.01,
             logging_dir=str(self.results_dir / "logs"),
             logging_steps=10,
-            eval_strategy="epoch",
-            save_strategy="no",  # 禁用自动保存
-            load_best_model_at_end=False,  # 禁用最佳模型加载
+            evaluation_strategy="epoch",  # 修正参数名
+            save_strategy="epoch",  # 改为按epoch保存
+            load_best_model_at_end=True,  # EarlyStoppingCallback需要这个
+            metric_for_best_model="eval_accuracy",
+            greater_is_better=True,
             save_total_limit=2,
             seed=42
         )
@@ -286,12 +301,14 @@ class BERTIntentClassifier:
         """测试示例"""
         
         test_cases = [
-            "姚明多少岁？",                    # Simple
-            "姚明和科比什么关系？",              # Complex
-            "科比身高？",                      # Simple
-            "比较詹姆斯和科比谁更强？",           # Complex
-            "湖人队在哪个城市？",                # Simple
-            "分析湖人队的历史成就",               # Complex
+            "How old is Yao Ming?",                           # ATTRIBUTE_QUERY
+            "Which team does LeBron James play for?",         # SIMPLE_RELATION_QUERY
+            "What's Kobe's height?",                          # ATTRIBUTE_QUERY
+            "Who is better, LeBron James or Kobe Bryant?",    # COMPARATIVE_QUERY
+            "Which city are the Lakers located in?",         # ATTRIBUTE_QUERY
+            "Analyze the Lakers' historical achievements",    # COMPLEX_RELATION_QUERY
+            "What do you think about basketball?",            # DOMAIN_CHITCHAT
+            "List all MVP players who played with Shaq",     # COMPLEX_RELATION_QUERY
         ]
         
         logger.info("🧪 测试示例:")
@@ -303,7 +320,7 @@ class BERTIntentClassifier:
 intent_classifier = BERTIntentClassifier()
 
 if __name__ == "__main__":
-    # 训练示例
-    csv_path = "data/training/final_training_dataset.csv"
+    # 训练示例 - 使用新的英文5类数据
+    csv_path = "data/training/english_fine_grained_training_dataset.csv"
     trainer, results = intent_classifier.train(csv_path, epochs=5)
     intent_classifier.test_examples()

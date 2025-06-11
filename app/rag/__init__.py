@@ -1,16 +1,37 @@
 """
-RAG模块初始化
+RAG模块初始化 - 新架构
+基于组件工厂模式的模块化RAG系统
 """
-from .simple_rag import SimpleRAG, rag_system
-from .g_retriever import GRetriever, g_retriever_system
-from .semantic_retriever import SemanticRetriever
-from .graph_constructor import GraphConstructor
-from .context_formatter import ContextFormatter
-from .graph_indexer import GraphIndexer
+
+# 导入缓存管理器
+from .cache_manager import CacheManager, cache_manager
+
+# 导入组件工厂
+from .component_factory import (
+    ComponentFactory, 
+    component_factory,
+    BaseRetriever, 
+    BaseGraphBuilder, 
+    BaseTextualizer,
+    ComponentConfig,
+    ProcessorConfig,
+    DefaultConfigs,
+    ProcessorDefaultConfigs
+)
+
+# 导入所有组件（这会自动注册到工厂）
+from .components import *
+
+# 导入处理器（将在创建后导入）
+# from .processors import *
 
 __all__ = [
-    'SimpleRAG', 'rag_system',
-    'GRetriever', 'g_retriever_system',
-    'SemanticRetriever', 'GraphConstructor', 
-    'ContextFormatter', 'GraphIndexer'
+    # 缓存管理器
+    'CacheManager', 'cache_manager',
+    
+    # 组件工厂
+    'ComponentFactory', 'component_factory',
+    'BaseRetriever', 'BaseGraphBuilder', 'BaseTextualizer',
+    'ComponentConfig', 'ProcessorConfig', 
+    'DefaultConfigs', 'ProcessorDefaultConfigs',
 ]

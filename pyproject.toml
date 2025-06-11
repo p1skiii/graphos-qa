@@ -18,13 +18,19 @@ faiss-cpu = "^1.11.0"
 networkx = "<3.5"
 torch = "2.1.0"
 torchvision = "<0.17"
-transformers = "<5.0"
-accelerate = "<1.0"
+transformers = "4.35.0"
+accelerate = "0.24.1"
 pandas = "<3.0"
 datasets = "<3.0"
 nebula3-python = "^3.8.3"
+torch-geometric = "^2.6.1"
 
 [tool.poetry.group.dev.dependencies]
+pytest = "^8.4.0"
+pytest-mock = "^3.14.1"
+pytest-cov = "^6.1.1"
+httpx = "^0.28.1"
+pytest-asyncio = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]

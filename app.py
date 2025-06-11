@@ -3,7 +3,7 @@ Flask应用主文件
 """
 from flask import Flask, request, jsonify, render_template_string
 from flask_cors import CORS
-from nebula_connection import nebula_conn
+from app.database.nebula_connection import nebula_conn
 import os
 
 app = Flask(__name__)

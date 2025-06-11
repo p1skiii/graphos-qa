@@ -1,0 +1,501 @@
+text,label,intent
+Review Suns's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+When was Allen Iverson born?,0,ATTRIBUTE_QUERY
+Tell me about Kevin Durant's career data,0,ATTRIBUTE_QUERY
+Which players are on Lakers?,1,SIMPLE_RELATION_QUERY
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+"Which team has more championship potential, Kings or Hornets?",3,COMPARATIVE_QUERY
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+When was Hornets founded?,0,ATTRIBUTE_QUERY
+Who are Nuggets's star players?,1,SIMPLE_RELATION_QUERY
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+Which players are on Hawks?,1,SIMPLE_RELATION_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+"Who has better scoring ability, Vince Carter or Wilt Chamberlain?",3,COMPARATIVE_QUERY
+Tell me about Jeremy Lin's career data,0,ATTRIBUTE_QUERY
+List all MVP players who had interactions with Dwyane Wade,2,COMPLEX_RELATION_QUERY
+When was Spurs founded?,0,ATTRIBUTE_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Who is LeBron James's agent?,1,SIMPLE_RELATION_QUERY
+Which coach did Bill Russell learn from?,1,SIMPLE_RELATION_QUERY
+"Who has better scoring ability, Jeremy Lin or Tracy McGrady?",3,COMPARATIVE_QUERY
+Where is Raptors's home court?,0,ATTRIBUTE_QUERY
+Compare and analyze Kevin Garnett and Steve Nash's playing styles,3,COMPARATIVE_QUERY
+What are the differences in technical styles between Wilt Chamberlain and Scottie Pippen?,3,COMPARATIVE_QUERY
+Who are Suns's star players?,1,SIMPLE_RELATION_QUERY
+What are the differences in technical styles between Kareem Abdul-Jabbar and Tracy McGrady?,3,COMPARATIVE_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+Who owns Trail Blazers?,1,SIMPLE_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Who is Nuggets's captain?,1,SIMPLE_RELATION_QUERY
+Review Trail Blazers's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Which coach did Kevin Garnett learn from?,1,SIMPLE_RELATION_QUERY
+Explore the mentorship relationship between Tracy McGrady and Zhizhi Wang,2,COMPLEX_RELATION_QUERY
+Summarize Pacers's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+"Who has better scoring ability, Tracy McGrady or Kevin Garnett?",3,COMPARATIVE_QUERY
+"Which team has more championship potential, Clippers or Suns?",3,COMPARATIVE_QUERY
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+Which coaches did Scottie Pippen work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Explore the mentorship relationship between Zhizhi Wang and Scottie Pippen,2,COMPLEX_RELATION_QUERY
+Compare and analyze Bill Russell and Jeremy Lin's playing styles,3,COMPARATIVE_QUERY
+Compare Tracy McGrady and Jeremy Lin's career achievements,3,COMPARATIVE_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Analyze Kareem Abdul-Jabbar's impact on Thunder's historical status,2,COMPLEX_RELATION_QUERY
+How old is Yi Jianlian?,0,ATTRIBUTE_QUERY
+"Which team has more championship potential, Bucks or Nets?",3,COMPARATIVE_QUERY
+Where is Bucks's home court?,0,ATTRIBUTE_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+"Who has better scoring ability, Bill Russell or Kareem Abdul-Jabbar?",3,COMPARATIVE_QUERY
+Where is Magic's home court?,0,ATTRIBUTE_QUERY
+What has basketball brought to you?,4,DOMAIN_CHITCHAT
+Compare LeBron James and Kevin Durant's influence on basketball,3,COMPARATIVE_QUERY
+What jersey number does Magic Johnson wear?,0,ATTRIBUTE_QUERY
+Which coach did Steve Nash learn from?,1,SIMPLE_RELATION_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+"Who has better scoring ability, Kevin Garnett or Kevin Durant?",3,COMPARATIVE_QUERY
+Tell me about Michael Jordan's career data,0,ATTRIBUTE_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+Compare Dwyane Wade and Kareem Abdul-Jabbar's career achievements,3,COMPARATIVE_QUERY
+Which team does Mengke Bateer play for?,1,SIMPLE_RELATION_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Analyze Vince Carter's impact on Bulls's historical status,2,COMPLEX_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+What position does Michael Jordan play?,0,ATTRIBUTE_QUERY
+What jersey number does Stephen Curry wear?,0,ATTRIBUTE_QUERY
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+Evaluate the historical status of Magic Johnson vs Tracy McGrady,3,COMPARATIVE_QUERY
+Compare and analyze Vince Carter and Mengke Bateer's playing styles,3,COMPARATIVE_QUERY
+"Who has better scoring ability, Zhizhi Wang or Kobe Bryant?",3,COMPARATIVE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+Which players played for both Raptors and Wizards?,2,COMPLEX_RELATION_QUERY
+Which coaches did Tracy McGrady work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Analyze Tim Duncan's impact on Trail Blazers's historical status,2,COMPLEX_RELATION_QUERY
+How old is Larry Bird?,0,ATTRIBUTE_QUERY
+Who is Clippers's current coach?,0,ATTRIBUTE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Compare Pelicans and Hawks's historical records,3,COMPARATIVE_QUERY
+Evaluate the historical status of Zhizhi Wang vs Wilt Chamberlain,3,COMPARATIVE_QUERY
+Who does Shaquille O'Neal play with?,1,SIMPLE_RELATION_QUERY
+What jersey number does Jeremy Lin wear?,0,ATTRIBUTE_QUERY
+Which team does Kobe Bryant play for?,1,SIMPLE_RELATION_QUERY
+Who is Cavaliers's captain?,1,SIMPLE_RELATION_QUERY
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+What does a basketball hero look like in your mind?,4,DOMAIN_CHITCHAT
+Who is Thunder's captain?,1,SIMPLE_RELATION_QUERY
+"Which team has more championship potential, 76ers or Mavericks?",3,COMPARATIVE_QUERY
+Summarize Wizards's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+Analyze the leadership differences between Kareem Abdul-Jabbar and Magic Johnson,3,COMPARATIVE_QUERY
+What makes basketball so appealing?,4,DOMAIN_CHITCHAT
+When was Bill Russell born?,0,ATTRIBUTE_QUERY
+Summarize Celtics's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+"Heat vs Celtics, which team is stronger?",3,COMPARATIVE_QUERY
+Who are Bill Russell's teammates?,1,SIMPLE_RELATION_QUERY
+Who is Tim Duncan's coach?,1,SIMPLE_RELATION_QUERY
+Compare Rockets and Pelicans's historical records,3,COMPARATIVE_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+Compare and analyze Jeremy Lin and Scottie Pippen's playing styles,3,COMPARATIVE_QUERY
+"Who has better scoring ability, Dwyane Wade or Tracy McGrady?",3,COMPARATIVE_QUERY
+Who does Jeremy Lin play with?,1,SIMPLE_RELATION_QUERY
+Who is Yao Ming's coach?,1,SIMPLE_RELATION_QUERY
+What has basketball brought to you?,4,DOMAIN_CHITCHAT
+Tell me about Michael Jordan's career data,0,ATTRIBUTE_QUERY
+Where is Warriors's home court?,0,ATTRIBUTE_QUERY
+Tell me about Tim Duncan's career data,0,ATTRIBUTE_QUERY
+Who is Bill Russell's coach?,1,SIMPLE_RELATION_QUERY
+Compare Larry Bird and Kobe Bryant's career achievements,3,COMPARATIVE_QUERY
+Which players are on Raptors?,1,SIMPLE_RELATION_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Which coach did Bill Russell learn from?,1,SIMPLE_RELATION_QUERY
+Which players were teammates with Zhizhi Wang and also won championships?,2,COMPLEX_RELATION_QUERY
+What are Stephen Curry's basic stats?,0,ATTRIBUTE_QUERY
+Summarize Bucks's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+Who owns Mavericks?,1,SIMPLE_RELATION_QUERY
+Who is Tim Duncan's coach?,1,SIMPLE_RELATION_QUERY
+Which coach did Larry Bird learn from?,1,SIMPLE_RELATION_QUERY
+Review Pistons's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+"Which team has more championship potential, Pelicans or Mavericks?",3,COMPARATIVE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Analyze Wilt Chamberlain's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Compare and analyze Zhizhi Wang and Allen Iverson's playing styles,3,COMPARATIVE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Analyze the leadership differences between Zhizhi Wang and Tim Duncan,3,COMPARATIVE_QUERY
+When was Jazz founded?,0,ATTRIBUTE_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+Who are Kings's star players?,1,SIMPLE_RELATION_QUERY
+Review 76ers's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Analyze Mengke Bateer's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Review Bulls's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Where is Bucks's home court?,0,ATTRIBUTE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Compare Larry Bird and Shaquille O'Neal's influence on basketball,3,COMPARATIVE_QUERY
+Who is Tim Duncan's coach?,1,SIMPLE_RELATION_QUERY
+Who are Magic Johnson's teammates?,1,SIMPLE_RELATION_QUERY
+Which players played for both Nuggets and Kings?,2,COMPLEX_RELATION_QUERY
+"Which team has more championship potential, Jazz or Clippers?",3,COMPARATIVE_QUERY
+Which players are on Warriors?,1,SIMPLE_RELATION_QUERY
+Analyze Stephen Curry's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Which players are on Pistons?,1,SIMPLE_RELATION_QUERY
+Compare and analyze Scottie Pippen and Zhizhi Wang's playing styles,3,COMPARATIVE_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Which team does Allen Iverson play for?,1,SIMPLE_RELATION_QUERY
+Compare Hornets and Lakers's historical records,3,COMPARATIVE_QUERY
+List all MVP players who had interactions with LeBron James,2,COMPLEX_RELATION_QUERY
+Review Knicks's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Who are Wilt Chamberlain's teammates?,1,SIMPLE_RELATION_QUERY
+Review Heat's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Tell me about Larry Bird's career data,0,ATTRIBUTE_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+Which players are on Rockets?,1,SIMPLE_RELATION_QUERY
+"Who has better scoring ability, Steve Nash or Larry Bird?",3,COMPARATIVE_QUERY
+What are the differences in technical styles between Dwyane Wade and Vince Carter?,3,COMPARATIVE_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Who is Mengke Bateer's coach?,1,SIMPLE_RELATION_QUERY
+Who is Pelicans's captain?,1,SIMPLE_RELATION_QUERY
+Review Trail Blazers's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+What are Tim Duncan's basic stats?,0,ATTRIBUTE_QUERY
+Who is 76ers's captain?,1,SIMPLE_RELATION_QUERY
+When was Heat founded?,0,ATTRIBUTE_QUERY
+Is the NBA still entertaining nowadays?,4,DOMAIN_CHITCHAT
+How tall is LeBron James?,0,ATTRIBUTE_QUERY
+How old is Tim Duncan?,0,ATTRIBUTE_QUERY
+Who does LeBron James play with?,1,SIMPLE_RELATION_QUERY
+How tall is Zhizhi Wang?,0,ATTRIBUTE_QUERY
+Who is Nets's captain?,1,SIMPLE_RELATION_QUERY
+Which players are on 76ers?,1,SIMPLE_RELATION_QUERY
+Who is Warriors's captain?,1,SIMPLE_RELATION_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+Analyze Magic Johnson's impact on Lakers's historical status,2,COMPLEX_RELATION_QUERY
+Which coaches did Vince Carter work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Which coach did Kevin Garnett learn from?,1,SIMPLE_RELATION_QUERY
+List all MVP players who had interactions with Tracy McGrady,2,COMPLEX_RELATION_QUERY
+Analyze Scottie Pippen's impact on 76ers's historical status,2,COMPLEX_RELATION_QUERY
+Which players were teammates with Magic Johnson and also won championships?,2,COMPLEX_RELATION_QUERY
+"Who has better scoring ability, Dwyane Wade or Kobe Bryant?",3,COMPARATIVE_QUERY
+Which players played for both Clippers and Rockets?,2,COMPLEX_RELATION_QUERY
+Who is Wilt Chamberlain's agent?,1,SIMPLE_RELATION_QUERY
+"Who has better scoring ability, Jeremy Lin or Kevin Durant?",3,COMPARATIVE_QUERY
+Compare Warriors and Magic's historical records,3,COMPARATIVE_QUERY
+Who owns Mavericks?,1,SIMPLE_RELATION_QUERY
+When was Kings founded?,0,ATTRIBUTE_QUERY
+Who are Hawks's star players?,1,SIMPLE_RELATION_QUERY
+Which coaches did Larry Bird work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Which players are on Pistons?,1,SIMPLE_RELATION_QUERY
+Who owns Nets?,1,SIMPLE_RELATION_QUERY
+Which coaches did Yao Ming work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Analyze Tracy McGrady's impact on Suns's historical status,2,COMPLEX_RELATION_QUERY
+Analyze Kobe Bryant's impact on Nuggets's historical status,2,COMPLEX_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Which coach did Mengke Bateer learn from?,1,SIMPLE_RELATION_QUERY
+Which players played for both Lakers and Celtics?,2,COMPLEX_RELATION_QUERY
+When was Kevin Durant born?,0,ATTRIBUTE_QUERY
+When was Vince Carter born?,0,ATTRIBUTE_QUERY
+How old is Magic Johnson?,0,ATTRIBUTE_QUERY
+What are the differences in technical styles between Kareem Abdul-Jabbar and Magic Johnson?,3,COMPARATIVE_QUERY
+List all MVP players who had interactions with Michael Jordan,2,COMPLEX_RELATION_QUERY
+Where is Wizards's home court?,0,ATTRIBUTE_QUERY
+Compare and analyze Tim Duncan and Kevin Garnett's playing styles,3,COMPARATIVE_QUERY
+When was Bucks founded?,0,ATTRIBUTE_QUERY
+Compare Thunder and Knicks's historical records,3,COMPARATIVE_QUERY
+What jersey number does Steve Nash wear?,0,ATTRIBUTE_QUERY
+What are the differences in technical styles between Steve Nash and Allen Iverson?,3,COMPARATIVE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Who is Mengke Bateer's coach?,1,SIMPLE_RELATION_QUERY
+"Which team has more championship potential, Hornets or Spurs?",3,COMPARATIVE_QUERY
+Who is Hawks's current coach?,0,ATTRIBUTE_QUERY
+Compare and analyze Kobe Bryant and Mengke Bateer's playing styles,3,COMPARATIVE_QUERY
+Who is Pacers's current coach?,0,ATTRIBUTE_QUERY
+Tell me about Zhizhi Wang's career data,0,ATTRIBUTE_QUERY
+Who are Heat's star players?,1,SIMPLE_RELATION_QUERY
+Compare Bill Russell and Stephen Curry's influence on basketball,3,COMPARATIVE_QUERY
+How tall is Kareem Abdul-Jabbar?,0,ATTRIBUTE_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+"Kings vs Pelicans, which team is stronger?",3,COMPARATIVE_QUERY
+List all MVP players who had interactions with Kobe Bryant,2,COMPLEX_RELATION_QUERY
+Who are Nuggets's star players?,1,SIMPLE_RELATION_QUERY
+How old is LeBron James?,0,ATTRIBUTE_QUERY
+What jersey number does Kobe Bryant wear?,0,ATTRIBUTE_QUERY
+Summarize Knicks's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+What position does Dwyane Wade play?,0,ATTRIBUTE_QUERY
+How old is Tracy McGrady?,0,ATTRIBUTE_QUERY
+When was Kevin Garnett born?,0,ATTRIBUTE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Who are Hornets's star players?,1,SIMPLE_RELATION_QUERY
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+How tall is Magic Johnson?,0,ATTRIBUTE_QUERY
+Evaluate the historical status of Bill Russell vs Michael Jordan,3,COMPARATIVE_QUERY
+Analyze Kevin Garnett's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Compare Allen Iverson and Kevin Durant's influence on basketball,3,COMPARATIVE_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+List all MVP players who had interactions with Mengke Bateer,2,COMPLEX_RELATION_QUERY
+Tell me about Scottie Pippen's career data,0,ATTRIBUTE_QUERY
+Is the NBA still entertaining nowadays?,4,DOMAIN_CHITCHAT
+Analyze Zhizhi Wang's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+Tell me about Kobe Bryant's career data,0,ATTRIBUTE_QUERY
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+"Kings vs Pacers, which team is stronger?",3,COMPARATIVE_QUERY
+What are Larry Bird's basic stats?,0,ATTRIBUTE_QUERY
+Compare and analyze Steve Nash and Tracy McGrady's playing styles,3,COMPARATIVE_QUERY
+Who is Mavericks's captain?,1,SIMPLE_RELATION_QUERY
+Which coaches did Kareem Abdul-Jabbar work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Tell me about Bill Russell's career data,0,ATTRIBUTE_QUERY
+List all MVP players who had interactions with Kevin Durant,2,COMPLEX_RELATION_QUERY
+Analyze the leadership differences between Michael Jordan and Steve Nash,3,COMPARATIVE_QUERY
+Where is Lakers's home court?,0,ATTRIBUTE_QUERY
+Summarize Spurs's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Compare Nets and Warriors's historical records,3,COMPARATIVE_QUERY
+Compare Kobe Bryant and Kareem Abdul-Jabbar's influence on basketball,3,COMPARATIVE_QUERY
+Who are Pistons's star players?,1,SIMPLE_RELATION_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+Which coaches did Jeremy Lin work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Which players were teammates with Stephen Curry and also won championships?,2,COMPLEX_RELATION_QUERY
+Who does Dirk Nowitzki play with?,1,SIMPLE_RELATION_QUERY
+Analyze Vince Carter's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+When was Shaquille O'Neal born?,0,ATTRIBUTE_QUERY
+Tell me about Kobe Bryant's career data,0,ATTRIBUTE_QUERY
+"Who has better scoring ability, Mengke Bateer or Wilt Chamberlain?",3,COMPARATIVE_QUERY
+Analyze the leadership differences between Zhizhi Wang and Kobe Bryant,3,COMPARATIVE_QUERY
+Analyze the leadership differences between Scottie Pippen and Steve Nash,3,COMPARATIVE_QUERY
+Who owns Pacers?,1,SIMPLE_RELATION_QUERY
+Compare Yao Ming and Dwyane Wade's influence on basketball,3,COMPARATIVE_QUERY
+What are Bill Russell's basic stats?,0,ATTRIBUTE_QUERY
+Who are Jazz's star players?,1,SIMPLE_RELATION_QUERY
+Who is Bucks's current coach?,0,ATTRIBUTE_QUERY
+Analyze Bill Russell's impact on Nuggets's historical status,2,COMPLEX_RELATION_QUERY
+What are the differences in technical styles between Bill Russell and Kevin Durant?,3,COMPARATIVE_QUERY
+Analyze the leadership differences between Allen Iverson and Steve Nash,3,COMPARATIVE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Where is Lakers's home court?,0,ATTRIBUTE_QUERY
+Who owns Nuggets?,1,SIMPLE_RELATION_QUERY
+Summarize Warriors's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+"Bulls vs Pistons, which team is stronger?",3,COMPARATIVE_QUERY
+Tell me about Steve Nash's career data,0,ATTRIBUTE_QUERY
+Which players played for both Suns and Kings?,2,COMPLEX_RELATION_QUERY
+Who is Vince Carter's agent?,1,SIMPLE_RELATION_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+Who are Larry Bird's teammates?,1,SIMPLE_RELATION_QUERY
+Summarize Pelicans's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+"Which team has more championship potential, Kings or Celtics?",3,COMPARATIVE_QUERY
+Who is Mavericks's current coach?,0,ATTRIBUTE_QUERY
+"Who has better scoring ability, Michael Jordan or Vince Carter?",3,COMPARATIVE_QUERY
+Who is Raptors's current coach?,0,ATTRIBUTE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+List all MVP players who had interactions with Stephen Curry,2,COMPLEX_RELATION_QUERY
+Explore the mentorship relationship between Tim Duncan and Dirk Nowitzki,2,COMPLEX_RELATION_QUERY
+Who is Kareem Abdul-Jabbar's agent?,1,SIMPLE_RELATION_QUERY
+Is the NBA still entertaining nowadays?,4,DOMAIN_CHITCHAT
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Which coach did Allen Iverson learn from?,1,SIMPLE_RELATION_QUERY
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+What is Larry Bird's height?,0,ATTRIBUTE_QUERY
+Compare Jeremy Lin and Zhizhi Wang's career achievements,3,COMPARATIVE_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Where is Pacers's home court?,0,ATTRIBUTE_QUERY
+Which coaches did Dirk Nowitzki work with throughout their career?,2,COMPLEX_RELATION_QUERY
+How tall is Allen Iverson?,0,ATTRIBUTE_QUERY
+Analyze the leadership differences between Mengke Bateer and Zhizhi Wang,3,COMPARATIVE_QUERY
+When was Kareem Abdul-Jabbar born?,0,ATTRIBUTE_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+Which players played for both Hornets and Bucks?,2,COMPLEX_RELATION_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Analyze Yi Jianlian's impact on Pacers's historical status,2,COMPLEX_RELATION_QUERY
+Which players played for both Trail Blazers and Warriors?,2,COMPLEX_RELATION_QUERY
+How tall is Wilt Chamberlain?,0,ATTRIBUTE_QUERY
+Who are Heat's star players?,1,SIMPLE_RELATION_QUERY
+What position does Dwyane Wade play?,0,ATTRIBUTE_QUERY
+Compare Lakers and Hawks's historical records,3,COMPARATIVE_QUERY
+Analyze Stephen Curry's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Compare Magic Johnson and LeBron James's career achievements,3,COMPARATIVE_QUERY
+Compare Vince Carter and Tracy McGrady's influence on basketball,3,COMPARATIVE_QUERY
+Analyze Yi Jianlian's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Which players are on Kings?,1,SIMPLE_RELATION_QUERY
+Who are Knicks's star players?,1,SIMPLE_RELATION_QUERY
+Analyze the leadership differences between Shaquille O'Neal and Yi Jianlian,3,COMPARATIVE_QUERY
+Who are Jazz's star players?,1,SIMPLE_RELATION_QUERY
+How tall is Scottie Pippen?,0,ATTRIBUTE_QUERY
+Who are Kings's star players?,1,SIMPLE_RELATION_QUERY
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+What does a basketball hero look like in your mind?,4,DOMAIN_CHITCHAT
+Which coaches did Shaquille O'Neal work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Which players are on Bulls?,1,SIMPLE_RELATION_QUERY
+Review Heat's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Which coach did Dirk Nowitzki learn from?,1,SIMPLE_RELATION_QUERY
+Which players played for both Bulls and Nuggets?,2,COMPLEX_RELATION_QUERY
+Who are Nuggets's star players?,1,SIMPLE_RELATION_QUERY
+Review Warriors's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Who is Pelicans's current coach?,0,ATTRIBUTE_QUERY
+What has basketball brought to you?,4,DOMAIN_CHITCHAT
+What makes basketball so appealing?,4,DOMAIN_CHITCHAT
+Who are Mavericks's star players?,1,SIMPLE_RELATION_QUERY
+Who is Timberwolves's current coach?,0,ATTRIBUTE_QUERY
+Which players played for both Hawks and Magic?,2,COMPLEX_RELATION_QUERY
+What is Scottie Pippen's height?,0,ATTRIBUTE_QUERY
+"Pelicans vs Warriors, which team is stronger?",3,COMPARATIVE_QUERY
+How tall is Kobe Bryant?,0,ATTRIBUTE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+How tall is Vince Carter?,0,ATTRIBUTE_QUERY
+Evaluate the historical status of Kobe Bryant vs Tracy McGrady,3,COMPARATIVE_QUERY
+Tell me about Kareem Abdul-Jabbar's career data,0,ATTRIBUTE_QUERY
+"Who has better scoring ability, Magic Johnson or Mengke Bateer?",3,COMPARATIVE_QUERY
+Analyze Kevin Durant's impact on Thunder's historical status,2,COMPLEX_RELATION_QUERY
+Who is Cavaliers's captain?,1,SIMPLE_RELATION_QUERY
+Where is Hornets's home court?,0,ATTRIBUTE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Which team does Magic Johnson play for?,1,SIMPLE_RELATION_QUERY
+Explore the mentorship relationship between Kevin Durant and Jeremy Lin,2,COMPLEX_RELATION_QUERY
+Compare Yao Ming and Kevin Durant's influence on basketball,3,COMPARATIVE_QUERY
+When was Zhizhi Wang born?,0,ATTRIBUTE_QUERY
+Review Hawks's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Compare Nets and Raptors's historical records,3,COMPARATIVE_QUERY
+What are Yao Ming's basic stats?,0,ATTRIBUTE_QUERY
+Where is Pacers's home court?,0,ATTRIBUTE_QUERY
+Who is Stephen Curry's coach?,1,SIMPLE_RELATION_QUERY
+Who is Nuggets's captain?,1,SIMPLE_RELATION_QUERY
+Is the NBA still entertaining nowadays?,4,DOMAIN_CHITCHAT
+What are the differences in technical styles between Larry Bird and Scottie Pippen?,3,COMPARATIVE_QUERY
+"Who has better scoring ability, Tracy McGrady or Steve Nash?",3,COMPARATIVE_QUERY
+Review Pacers's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+"Which team has more championship potential, Pelicans or Heat?",3,COMPARATIVE_QUERY
+Which coach did Dwyane Wade learn from?,1,SIMPLE_RELATION_QUERY
+Which team does Michael Jordan play for?,1,SIMPLE_RELATION_QUERY
+List all MVP players who had interactions with Michael Jordan,2,COMPLEX_RELATION_QUERY
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+Analyze Larry Bird's impact on Bulls's historical status,2,COMPLEX_RELATION_QUERY
+Compare and analyze Yao Ming and Allen Iverson's playing styles,3,COMPARATIVE_QUERY
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+What does a basketball hero look like in your mind?,4,DOMAIN_CHITCHAT
+Review Lakers's important trades and transfers in history,2,COMPLEX_RELATION_QUERY
+Compare Yao Ming and Wilt Chamberlain's influence on basketball,3,COMPARATIVE_QUERY
+Analyze Yao Ming's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+When was Bucks founded?,0,ATTRIBUTE_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Explore the mentorship relationship between Scottie Pippen and Kevin Durant,2,COMPLEX_RELATION_QUERY
+What position does Vince Carter play?,0,ATTRIBUTE_QUERY
+Who are Scottie Pippen's teammates?,1,SIMPLE_RELATION_QUERY
+Who are Yi Jianlian's teammates?,1,SIMPLE_RELATION_QUERY
+When was Yao Ming born?,0,ATTRIBUTE_QUERY
+What makes basketball so appealing?,4,DOMAIN_CHITCHAT
+Who is Kevin Garnett's coach?,1,SIMPLE_RELATION_QUERY
+Explore the mentorship relationship between Kareem Abdul-Jabbar and Dwyane Wade,2,COMPLEX_RELATION_QUERY
+How old is Bill Russell?,0,ATTRIBUTE_QUERY
+What position does Magic Johnson play?,0,ATTRIBUTE_QUERY
+Compare Kings and Jazz's historical records,3,COMPARATIVE_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+Who is Timberwolves's captain?,1,SIMPLE_RELATION_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Which players played for both Spurs and Nuggets?,2,COMPLEX_RELATION_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+What makes basketball so appealing?,4,DOMAIN_CHITCHAT
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+Analyze Tim Duncan's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Who are Kareem Abdul-Jabbar's teammates?,1,SIMPLE_RELATION_QUERY
+Who is Wilt Chamberlain's coach?,1,SIMPLE_RELATION_QUERY
+What is Tracy McGrady's height?,0,ATTRIBUTE_QUERY
+Summarize Bulls's core roster changes during their dynasty period,2,COMPLEX_RELATION_QUERY
+Which coach did Steve Nash learn from?,1,SIMPLE_RELATION_QUERY
+What does a basketball hero look like in your mind?,4,DOMAIN_CHITCHAT
+What position does Mengke Bateer play?,0,ATTRIBUTE_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+Evaluate the historical status of Kevin Durant vs Shaquille O'Neal,3,COMPARATIVE_QUERY
+Which coach did Kobe Bryant learn from?,1,SIMPLE_RELATION_QUERY
+Which players were teammates with Kevin Durant and also won championships?,2,COMPLEX_RELATION_QUERY
+Which coach did Zhizhi Wang learn from?,1,SIMPLE_RELATION_QUERY
+"Which team has more championship potential, 76ers or Rockets?",3,COMPARATIVE_QUERY
+Who is Bill Russell's agent?,1,SIMPLE_RELATION_QUERY
+Which players are on Clippers?,1,SIMPLE_RELATION_QUERY
+Who is Vince Carter's agent?,1,SIMPLE_RELATION_QUERY
+Tell me about Shaquille O'Neal's career data,0,ATTRIBUTE_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+Who does Vince Carter play with?,1,SIMPLE_RELATION_QUERY
+Analyze Kevin Durant's career trajectory and key milestones,2,COMPLEX_RELATION_QUERY
+Compare Nets and Mavericks's historical records,3,COMPARATIVE_QUERY
+Who are Kobe Bryant's teammates?,1,SIMPLE_RELATION_QUERY
+Which team does Yao Ming play for?,1,SIMPLE_RELATION_QUERY
+What makes basketball so appealing?,4,DOMAIN_CHITCHAT
+List all MVP players who had interactions with Kevin Garnett,2,COMPLEX_RELATION_QUERY
+What do you think is the spirit of basketball?,4,DOMAIN_CHITCHAT
+Which players played for both Bulls and Hawks?,2,COMPLEX_RELATION_QUERY
+Tell me about Wilt Chamberlain's career data,0,ATTRIBUTE_QUERY
+Who is Magic Johnson's agent?,1,SIMPLE_RELATION_QUERY
+What are your thoughts on basketball?,4,DOMAIN_CHITCHAT
+Compare Dirk Nowitzki and Tracy McGrady's career achievements,3,COMPARATIVE_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Who is Allen Iverson's agent?,1,SIMPLE_RELATION_QUERY
+When was Michael Jordan born?,0,ATTRIBUTE_QUERY
+What are the differences in technical styles between Stephen Curry and Jeremy Lin?,3,COMPARATIVE_QUERY
+Explore the mentorship relationship between Dirk Nowitzki and Yao Ming,2,COMPLEX_RELATION_QUERY
+Compare Suns and Timberwolves's historical records,3,COMPARATIVE_QUERY
+Tell me about Vince Carter's career data,0,ATTRIBUTE_QUERY
+"Jazz vs Warriors, which team is stronger?",3,COMPARATIVE_QUERY
+Who owns Hawks?,1,SIMPLE_RELATION_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+"Heat vs Mavericks, which team is stronger?",3,COMPARATIVE_QUERY
+Explore the mentorship relationship between Steve Nash and Magic Johnson,2,COMPLEX_RELATION_QUERY
+Tell me about Tracy McGrady's career data,0,ATTRIBUTE_QUERY
+Who are Trail Blazers's star players?,1,SIMPLE_RELATION_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+When was Hornets founded?,0,ATTRIBUTE_QUERY
+How do you evaluate modern basketball development?,4,DOMAIN_CHITCHAT
+Who is Shaquille O'Neal's coach?,1,SIMPLE_RELATION_QUERY
+Compare and analyze Tracy McGrady and Wilt Chamberlain's playing styles,3,COMPARATIVE_QUERY
+List all MVP players who had interactions with Stephen Curry,2,COMPLEX_RELATION_QUERY
+What does a basketball hero look like in your mind?,4,DOMAIN_CHITCHAT
+Who are Dwyane Wade's teammates?,1,SIMPLE_RELATION_QUERY
+Which team does LeBron James play for?,1,SIMPLE_RELATION_QUERY
+Who is Suns's current coach?,0,ATTRIBUTE_QUERY
+Compare and analyze Zhizhi Wang and Tracy McGrady's playing styles,3,COMPARATIVE_QUERY
+Talk about basketball culture's influence,4,DOMAIN_CHITCHAT
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Share your basketball story,4,DOMAIN_CHITCHAT
+Who is Tim Duncan's coach?,1,SIMPLE_RELATION_QUERY
+Who do you think is the GOAT?,4,DOMAIN_CHITCHAT
+Explore the mentorship relationship between Wilt Chamberlain and Scottie Pippen,2,COMPLEX_RELATION_QUERY
+What are the differences in technical styles between Larry Bird and Kareem Abdul-Jabbar?,3,COMPARATIVE_QUERY
+"Raptors vs Clippers, which team is stronger?",3,COMPARATIVE_QUERY
+How old is Bill Russell?,0,ATTRIBUTE_QUERY
+What do you think about basketball commercialization?,4,DOMAIN_CHITCHAT
+Share your basketball story,4,DOMAIN_CHITCHAT
+When was Thunder founded?,0,ATTRIBUTE_QUERY
+What attracts you most about basketball?,4,DOMAIN_CHITCHAT
+What is Zhizhi Wang's height?,0,ATTRIBUTE_QUERY
+Analyze Bill Russell's impact on Jazz's historical status,2,COMPLEX_RELATION_QUERY
+Share your basketball story,4,DOMAIN_CHITCHAT
+When was Cavaliers founded?,0,ATTRIBUTE_QUERY
+Share your favorite basketball moments,4,DOMAIN_CHITCHAT
+Analyze the evolution of modern basketball tactical systems,2,COMPLEX_RELATION_QUERY
+Share the inspiration basketball brings to people,4,DOMAIN_CHITCHAT
+Analyze the leadership differences between Steve Nash and Kareem Abdul-Jabbar,3,COMPARATIVE_QUERY
+What are the differences in technical styles between Magic Johnson and Dwyane Wade?,3,COMPARATIVE_QUERY
+When was Suns founded?,0,ATTRIBUTE_QUERY
+How has basketball changed things?,4,DOMAIN_CHITCHAT
+"Who has better scoring ability, Vince Carter or Zhizhi Wang?",3,COMPARATIVE_QUERY
+Which coaches did Kevin Durant work with throughout their career?,2,COMPLEX_RELATION_QUERY
+Evaluate the historical status of Steve Nash vs Kevin Garnett,3,COMPARATIVE_QUERY
+How tall is Scottie Pippen?,0,ATTRIBUTE_QUERY
+"Thunder vs Celtics, which team is stronger?",3,COMPARATIVE_QUERY
+How old is Larry Bird?,0,ATTRIBUTE_QUERY
+When was Timberwolves founded?,0,ATTRIBUTE_QUERY
+Where is Wizards's home court?,0,ATTRIBUTE_QUERY
+"Trail Blazers vs 76ers, which team is stronger?",3,COMPARATIVE_QUERY
+Compare Heat and Pacers's historical records,3,COMPARATIVE_QUERY
+Compare Yao Ming and Vince Carter's influence on basketball,3,COMPARATIVE_QUERY
+What are Allen Iverson's basic stats?,0,ATTRIBUTE_QUERY
+Who are Thunder's star players?,1,SIMPLE_RELATION_QUERY
