@@ -218,11 +218,18 @@ class ComplexGProcessor(BaseProcessor):
             graph_encoding_time = time.time() - graph_encoding_start
             self.enhanced_stats['graph_encoding_time'] += graph_encoding_time
             
-            # 3. 多模态融合
+            # 3. 增强图嵌入的语义理解
+            enhanced_graph_info = self._enhance_graph_semantics(
+                graph_embedding, 
+                traditional_result['graph'], 
+                query
+            )
+            
+            # 4. 多模态融合
             fusion_start = time.time()
             multimodal_context = self._create_multimodal_context(
                 traditional_result['textual_context'],
-                graph_embedding,
+                enhanced_graph_info,
                 query
             )
             fusion_time = time.time() - fusion_start
@@ -234,8 +241,13 @@ class ComplexGProcessor(BaseProcessor):
                 'mode': 'enhanced',
                 'query': query,
                 'traditional_result': traditional_result,
-                'graph_embedding': graph_embedding,
+                'graph_embedding': enhanced_graph_info,
                 'multimodal_context': multimodal_context,
+                'enhanced_metadata': {
+                    'graph_summary': enhanced_graph_info.get('semantic_summary', ''),
+                    'fusion_strategy': self.complex_config.fusion_strategy,
+                    'llm_ready': True
+                },
                 'enhanced_metrics': {
                     'graph_encoding_time': graph_encoding_time,
                     'fusion_time': fusion_time,
@@ -249,6 +261,146 @@ class ComplexGProcessor(BaseProcessor):
         except Exception as e:
             logger.error(f"❌ 增强模式处理失败: {str(e)}")
             raise
+    
+    def _enhance_graph_semantics(self, graph_embedding: Optional[Dict[str, Any]], 
+                                graph_data: Dict[str, Any], query: str) -> Dict[str, Any]:
+        """增强图嵌入的语义理解"""
+        try:
+            if not graph_embedding or not graph_embedding.get('encoding_success'):
+                return graph_embedding or {}
+            
+            # 基础信息
+            enhanced_info = graph_embedding.copy()
+            
+            # 添加语义摘要
+            semantic_summary = self._generate_graph_summary(graph_data, query)
+            enhanced_info['semantic_summary'] = semantic_summary
+            
+            # 添加实体关系分析
+            entity_analysis = self._analyze_entities_and_relations(graph_data)
+            enhanced_info['entity_analysis'] = entity_analysis
+            
+            # 添加查询相关性分析
+            relevance_info = self._analyze_query_relevance(graph_data, query)
+            enhanced_info['query_relevance'] = relevance_info
+            
+            return enhanced_info
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 图语义增强失败: {str(e)}")
+            return graph_embedding or {}
+    
+    def _generate_graph_summary(self, graph_data: Dict[str, Any], query: str) -> str:
+        """生成图谱摘要"""
+        try:
+            summary_parts = []
+            
+            # 分析图结构
+            if 'graph_structure' in graph_data:
+                structure = graph_data['graph_structure']
+                node_count = structure.get('num_nodes', 0)
+                edge_count = structure.get('num_edges', 0)
+                summary_parts.append(f"包含{node_count}个实体和{edge_count}个关系")
+            
+            # 分析实体类型
+            if 'metadata' in graph_data:
+                metadata = graph_data['metadata']
+                if 'entity_types' in metadata and metadata['entity_types']:
+                    types = metadata['entity_types'][:3]  # 取前3个类型
+                    summary_parts.append(f"主要实体类型：{', '.join(types)}")
+            
+            # 分析关键节点
+            if 'key_nodes' in graph_data:
+                key_nodes = graph_data['key_nodes'][:3]  # 取前3个关键节点
+                if key_nodes:
+                    summary_parts.append(f"关键实体：{', '.join(key_nodes)}")
+            
+            base_summary = "图谱" + "，".join(summary_parts) if summary_parts else "图谱结构信息"
+            
+            # 添加查询相关性
+            if query:
+                base_summary += f"，与查询'{query[:20]}...'相关"
+            
+            return base_summary
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 图谱摘要生成失败: {str(e)}")
+            return "图谱结构特征"
+    
+    def _analyze_entities_and_relations(self, graph_data: Dict[str, Any]) -> Dict[str, Any]:
+        """分析实体和关系"""
+        try:
+            analysis = {
+                'entity_count': 0,
+                'relation_count': 0,
+                'entity_types': [],
+                'relation_types': []
+            }
+            
+            # 分析节点
+            if 'nodes' in graph_data:
+                nodes = graph_data['nodes']
+                analysis['entity_count'] = len(nodes)
+                
+                # 收集实体类型
+                entity_types = set()
+                for node in nodes:
+                    if 'label' in node:
+                        entity_types.add(node['label'])
+                analysis['entity_types'] = list(entity_types)
+            
+            # 分析边
+            if 'edges' in graph_data:
+                edges = graph_data['edges']
+                analysis['relation_count'] = len(edges)
+                
+                # 收集关系类型
+                relation_types = set()
+                for edge in edges:
+                    if 'relation' in edge:
+                        relation_types.add(edge['relation'])
+                analysis['relation_types'] = list(relation_types)
+            
+            return analysis
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 实体关系分析失败: {str(e)}")
+            return {}
+    
+    def _analyze_query_relevance(self, graph_data: Dict[str, Any], query: str) -> Dict[str, Any]:
+        """分析查询相关性"""
+        try:
+            relevance_info = {
+                'query_entities': [],
+                'matched_nodes': [],
+                'relevance_score': 0.0
+            }
+            
+            # 简单的查询实体提取（实际应用中可能需要更复杂的NER）
+            query_lower = query.lower()
+            query_entities = []
+            
+            # 从图中寻找匹配的实体
+            if 'nodes' in graph_data:
+                matched_nodes = []
+                for node in graph_data['nodes']:
+                    node_name = node.get('name', '').lower()
+                    if node_name and node_name in query_lower:
+                        matched_nodes.append(node['id'])
+                        query_entities.append(node_name)
+                
+                relevance_info['query_entities'] = query_entities
+                relevance_info['matched_nodes'] = matched_nodes
+                
+                # 计算相关性分数
+                if len(matched_nodes) > 0:
+                    relevance_info['relevance_score'] = min(1.0, len(matched_nodes) / 3.0)
+            
+            return relevance_info
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 查询相关性分析失败: {str(e)}")
+            return {}
     
     def _encode_graph_data(self, graph_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """编码图数据为向量表示"""
@@ -295,16 +447,28 @@ class ComplexGProcessor(BaseProcessor):
             if graph_embedding and graph_embedding.get('encoding_success'):
                 graph_embed = graph_embedding.get('embedding')
             
+            # 构建增强的元数据
+            enhanced_metadata = {
+                'query': query,
+                'fusion_strategy': self.complex_config.fusion_strategy,
+                'creation_time': time.time(),
+                'graph_encoding_success': graph_embedding.get('encoding_success', False) if graph_embedding else False
+            }
+            
+            # 添加图语义信息到元数据
+            if graph_embedding:
+                if 'semantic_summary' in graph_embedding:
+                    enhanced_metadata['graph_summary'] = graph_embedding['semantic_summary']
+                if 'entity_analysis' in graph_embedding:
+                    enhanced_metadata['entity_analysis'] = graph_embedding['entity_analysis']
+                if 'query_relevance' in graph_embedding:
+                    enhanced_metadata['query_relevance'] = graph_embedding['query_relevance']
+            
             # 创建MultimodalContext
             multimodal_context = MultimodalContext(
                 text_context=text_content,
                 graph_embedding=graph_embed,
-                metadata={
-                    'query': query,
-                    'fusion_strategy': self.complex_config.fusion_strategy,
-                    'creation_time': time.time(),
-                    'graph_encoding_success': graph_embedding.get('encoding_success', False) if graph_embedding else False
-                }
+                metadata=enhanced_metadata
             )
             
             return multimodal_context

@@ -33,15 +33,19 @@ class LLMResponse:
     metadata: Dict[str, Any]
     processing_time: float
     token_usage: Dict[str, int]
+    extra_data: Optional[Dict[str, Any]] = None
     
     def to_dict(self) -> Dict[str, Any]:
         """转换为字典格式"""
-        return {
+        result = {
             'content': self.content,
             'metadata': self.metadata,
             'processing_time': self.processing_time,
             'token_usage': self.token_usage
         }
+        if self.extra_data:
+            result['extra_data'] = self.extra_data
+        return result
 
 class GraphProjector(nn.Module):
     """图嵌入投影器 - 基于G-Retriever设计"""
@@ -240,10 +244,16 @@ class LLMEngine:
                     'processor_type': unified_input.processor_type,
                     'has_multimodal': unified_input.has_multimodal_data(),
                     'prompt_length': len(prompt),
-                    'model_name': self.config.model_config.model_name
+                    'model_name': self.config.model_config.model_name,
+                    'fusion_metadata': processed_input.get('fusion_metadata', {}),
+                    'extra_inputs_provided': processed_input.get('extra_inputs') is not None
                 },
                 processing_time=processing_time,
-                token_usage=self._calculate_token_usage(prompt, response_text)
+                token_usage=self._calculate_token_usage(prompt, response_text),
+                extra_data={
+                    'fusion_strategy': self.config.fusion_strategy,
+                    'processed_input': processed_input
+                }
             )
             
             # 更新统计
@@ -277,21 +287,26 @@ class LLMEngine:
             return f"<|user|>\n{unified_input.query}<|end|>\n<|assistant|>\n"
     
     def _process_multimodal_input(self, unified_input: UnifiedInput, prompt: str) -> Dict[str, Any]:
-        """处理多模态输入"""
+        """处理多模态输入 - 基于G-Retriever的深度融合"""
         result = {
             'text': prompt,
-            'extra_inputs': None
+            'extra_inputs': None,
+            'fusion_metadata': {}
         }
         
         # 如果没有多模态数据或投影器，直接返回文本
         if not unified_input.has_multimodal_data() or not self.graph_projector:
+            result['fusion_metadata']['fusion_applied'] = False
             return result
         
         try:
             # 获取图嵌入
             graph_embedding = unified_input.get_graph_embedding()
             if not graph_embedding:
+                result['fusion_metadata']['fusion_applied'] = False
                 return result
+            
+            logger.info(f"🎭 开始多模态融合处理，图嵌入维度: {len(graph_embedding)}")
             
             # 转换为tensor
             graph_tensor = torch.tensor(graph_embedding, dtype=torch.float32).unsqueeze(0)  # [1, graph_dim]
@@ -301,20 +316,202 @@ class LLMEngine:
             with torch.no_grad():
                 projected_embedding = self.graph_projector(graph_tensor)  # [1, llm_dim]
             
-            # 基于G-Retriever的融合策略
-            if self.config.fusion_strategy == "concatenate":
-                # 在这里我们暂时将图信息编码到文本中
-                # 实际的concatenate融合需要在模型内部实现
-                graph_info = f"\n[图谱特征: {len(graph_embedding)}维向量表示]\n"
-                result['text'] = prompt.replace('<|assistant|>', graph_info + '<|assistant|>')
-                result['extra_inputs'] = {'graph_projection': projected_embedding}
+            # 基于G-Retriever的融合策略实现
+            fusion_result = self._apply_fusion_strategy(
+                prompt, 
+                projected_embedding, 
+                unified_input, 
+                graph_embedding
+            )
             
-            logger.info(f"🎭 多模态输入处理完成，图嵌入维度: {len(graph_embedding)}")
+            result.update(fusion_result)
+            result['fusion_metadata'].update({
+                'fusion_applied': True,
+                'graph_embedding_dim': len(graph_embedding),
+                'projected_dim': projected_embedding.shape[-1],
+                'fusion_strategy': self.config.fusion_strategy,
+                'has_multimodal_context': unified_input.multimodal_context is not None
+            })
+            
+            logger.info(f"✅ 多模态融合完成，策略: {self.config.fusion_strategy}")
             
         except Exception as e:
             logger.error(f"❌ 多模态输入处理失败: {str(e)}")
+            result['fusion_metadata']['fusion_applied'] = False
+            result['fusion_metadata']['error'] = str(e)
         
         return result
+    
+    def _apply_fusion_strategy(self, prompt: str, projected_embedding: torch.Tensor, 
+                             unified_input: UnifiedInput, graph_embedding: List[float]) -> Dict[str, Any]:
+        """应用融合策略 - 基于G-Retriever论文实现"""
+        try:
+            if self.config.fusion_strategy == "concatenate":
+                return self._concatenate_fusion(prompt, projected_embedding, unified_input, graph_embedding)
+            elif self.config.fusion_strategy == "weighted":
+                return self._weighted_fusion(prompt, projected_embedding, unified_input, graph_embedding)
+            elif self.config.fusion_strategy == "attention":
+                return self._attention_fusion(prompt, projected_embedding, unified_input, graph_embedding)
+            else:
+                # 默认concatenate
+                return self._concatenate_fusion(prompt, projected_embedding, unified_input, graph_embedding)
+                
+        except Exception as e:
+            logger.error(f"❌ 融合策略应用失败: {str(e)}")
+            return {'text': prompt, 'extra_inputs': None}
+    
+    def _concatenate_fusion(self, prompt: str, projected_embedding: torch.Tensor, 
+                          unified_input: UnifiedInput, graph_embedding: List[float]) -> Dict[str, Any]:
+        """拼接融合策略 - G-Retriever核心方法"""
+        # 1. 提取图谱语义信息描述
+        graph_description = self._extract_graph_semantics(unified_input)
+        
+        # 2. 构建融合文本 - 将图谱信息嵌入到prompt中
+        fusion_text = self._build_fusion_text(prompt, graph_description, unified_input)
+        
+        # 3. 准备额外输入（投影后的图嵌入用于潜在的深度融合）
+        extra_inputs = {
+            'graph_projection': projected_embedding,
+            'raw_graph_embedding': graph_embedding,
+            'graph_semantics': graph_description
+        }
+        
+        return {
+            'text': fusion_text,
+            'extra_inputs': extra_inputs
+        }
+    
+    def _weighted_fusion(self, prompt: str, projected_embedding: torch.Tensor, 
+                        unified_input: UnifiedInput, graph_embedding: List[float]) -> Dict[str, Any]:
+        """加权融合策略"""
+        # 计算文本和图嵌入的权重
+        text_weight = 0.7  # 文本权重
+        graph_weight = 0.3  # 图权重
+        
+        # 构建加权描述
+        graph_description = self._extract_graph_semantics(unified_input)
+        weighted_description = f"(权重{graph_weight:.1f}) {graph_description}"
+        
+        fusion_text = self._build_fusion_text(prompt, weighted_description, unified_input)
+        
+        extra_inputs = {
+            'graph_projection': projected_embedding * graph_weight,
+            'weights': {'text': text_weight, 'graph': graph_weight},
+            'fusion_mode': 'weighted'
+        }
+        
+        return {
+            'text': fusion_text,
+            'extra_inputs': extra_inputs
+        }
+    
+    def _attention_fusion(self, prompt: str, projected_embedding: torch.Tensor, 
+                         unified_input: UnifiedInput, graph_embedding: List[float]) -> Dict[str, Any]:
+        """注意力融合策略（简化版）"""
+        # 计算注意力权重（简化实现）
+        attention_score = min(1.0, len(graph_embedding) / 128.0)  # 基于嵌入维度的简单注意力
+        
+        graph_description = self._extract_graph_semantics(unified_input)
+        attention_description = f"(注意力{attention_score:.2f}) {graph_description}"
+        
+        fusion_text = self._build_fusion_text(prompt, attention_description, unified_input)
+        
+        extra_inputs = {
+            'graph_projection': projected_embedding * attention_score,
+            'attention_score': attention_score,
+            'fusion_mode': 'attention'
+        }
+        
+        return {
+            'text': fusion_text,
+            'extra_inputs': extra_inputs
+        }
+    
+    def _extract_graph_semantics(self, unified_input: UnifiedInput) -> str:
+        """提取图谱语义信息"""
+        try:
+            # 从multimodal_context中提取语义信息
+            if unified_input.multimodal_context:
+                metadata = unified_input.multimodal_context.metadata
+                if 'graph_summary' in metadata:
+                    return metadata['graph_summary']
+            
+            # 从processor_data中提取图谱信息
+            if unified_input.processor_data:
+                if 'graph_embedding' in unified_input.processor_data:
+                    graph_info = unified_input.processor_data['graph_embedding']
+                    if isinstance(graph_info, dict) and 'encoding_metadata' in graph_info:
+                        return graph_info['encoding_metadata'].get('summary', '图谱结构特征')
+                
+                # 从traditional_result中提取图谱结构信息
+                if 'traditional_result' in unified_input.processor_data:
+                    trad_result = unified_input.processor_data['traditional_result']
+                    if 'graph' in trad_result:
+                        graph_data = trad_result['graph']
+                        return self._summarize_graph_structure(graph_data)
+            
+            # 默认描述
+            graph_dim = len(unified_input.get_graph_embedding()) if unified_input.get_graph_embedding() else 0
+            return f"图谱结构特征（{graph_dim}维向量表示）"
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 图谱语义提取失败: {str(e)}")
+            return "图谱结构信息"
+    
+    def _summarize_graph_structure(self, graph_data: Dict[str, Any]) -> str:
+        """总结图谱结构信息"""
+        try:
+            summary_parts = []
+            
+            if 'graph_structure' in graph_data:
+                structure = graph_data['graph_structure']
+                if 'num_nodes' in structure:
+                    summary_parts.append(f"{structure['num_nodes']}个节点")
+                if 'num_edges' in structure:
+                    summary_parts.append(f"{structure['num_edges']}条边")
+            
+            if 'metadata' in graph_data:
+                metadata = graph_data['metadata']
+                if 'entity_types' in metadata:
+                    types = metadata['entity_types']
+                    if types:
+                        summary_parts.append(f"实体类型: {', '.join(types[:3])}")
+            
+            return "图谱包含" + "、".join(summary_parts) if summary_parts else "图谱结构特征"
+            
+        except Exception:
+            return "图谱结构特征"
+    
+    def _build_fusion_text(self, original_prompt: str, graph_description: str, 
+                          unified_input: UnifiedInput) -> str:
+        """构建融合文本 - 将图谱信息自然地融入prompt"""
+        try:
+            # 检查是否有文本上下文
+            text_context = unified_input.get_text_content()
+            
+            # 构建图谱信息描述
+            graph_info_block = f"""
+[图谱分析]
+{graph_description}
+相关图谱上下文: {text_context[:200] + '...' if len(text_context) > 200 else text_context}
+"""
+            
+            # 智能插入图谱信息
+            if '<|assistant|>' in original_prompt:
+                # 在assistant回复前插入图谱信息
+                fusion_prompt = original_prompt.replace(
+                    '<|assistant|>', 
+                    f'{graph_info_block}\n<|assistant|>\n根据上述文本和图谱信息，我来回答：'
+                )
+            else:
+                # 在prompt末尾添加图谱信息
+                fusion_prompt = f"{original_prompt}\n\n{graph_info_block}\n\n请结合文本和图谱信息回答问题。"
+            
+            return fusion_prompt
+            
+        except Exception as e:
+            logger.warning(f"⚠️ 融合文本构建失败: {str(e)}")
+            return original_prompt
     
     def _generate_text(self, prompt: str, extra_inputs: Optional[Dict[str, Any]] = None) -> str:
         """生成文本"""
