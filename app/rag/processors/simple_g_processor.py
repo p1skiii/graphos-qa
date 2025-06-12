@@ -36,7 +36,7 @@ class SimpleGProcessor(BaseProcessor):
             )
             
             if not retrieved_nodes:
-                return self._create_empty_result(query, "未找到相关实体")
+                return self._create_empty_result(query, "No relevant entities found")
             
             # 3. 构建简单子图 (BFS扩展)
             seed_nodes = [node['node_id'] for node in retrieved_nodes[:6]]
@@ -222,7 +222,7 @@ class SimpleGProcessor(BaseProcessor):
                 'algorithm': 'none',
                 'relation_types': []
             },
-            'contextualized_text': f"抱歉，{reason}。请尝试提及具体的球员或球队名称。",
+            'contextualized_text': f"Sorry, {reason}. Please try mentioning specific player or team names.",
             'processing_strategy': 'simple_graph_relation',
             'confidence': 0.0,
             'empty_reason': reason
@@ -252,9 +252,9 @@ class SimpleGProcessor(BaseProcessor):
     def _format_simple_relations(self, nodes: List[Dict], query: str) -> str:
         """格式化简单关系信息"""
         if not nodes:
-            return "未找到相关关系信息。"
+            return "No relevant relationship information found."
         
-        text_parts = ["根据查询找到以下关系信息："]
+        text_parts = ["Found the following relationship information based on the query:"]
         
         # 按类型分组节点
         players = [n for n in nodes if n.get('type') == 'player']

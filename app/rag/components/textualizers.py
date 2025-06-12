@@ -290,7 +290,7 @@ class CompactTextualizer(BaseTextualizer):
         edges = subgraph.get('edges', [])
         
         if not nodes:
-            return "未找到相关图信息。"
+            return "No relevant graph information found."
         
         # 优先显示实体
         if self.prioritize_entities:
@@ -407,13 +407,13 @@ class QATextualizer(BaseTextualizer):
     def textualize(self, subgraph: Dict[str, Any], query: str) -> str:
         """将子图转换为QA优化的文本"""
         if not self.is_initialized:
-            raise RuntimeError("文本化器未初始化")
+            raise RuntimeError("Textualizer not initialized")
         
         nodes = subgraph.get('nodes', [])
         edges = subgraph.get('edges', [])
         
         if not nodes:
-            return "抱歉，我没有找到相关的图信息来回答您的问题。"
+            return "Sorry, I couldn't find relevant graph information to answer your question."
         
         # 分析查询类型并生成相应文本
         if self.focus_on_query:
@@ -459,7 +459,7 @@ class QATextualizer(BaseTextualizer):
                            if n.get('type') == 'player' and n.get('age')]
         
         if not players_with_age:
-            return "未找到球员的年龄信息。"
+            return "No player age information found."
         
         age_info = []
         for player in players_with_age:
@@ -478,8 +478,8 @@ class QATextualizer(BaseTextualizer):
             teams = [n for n in nodes if n.get('type') == 'team']
             if teams:
                 team_names = [t.get('name', '未知') for t in teams]
-                return f"相关球队：{', '.join(team_names)}"
-            return "未找到球队相关信息。"
+                return f"Related teams: {', '.join(team_names)}"
+            return "No team information found."
         
         team_info = []
         for relation in serve_relations:
@@ -495,7 +495,7 @@ class QATextualizer(BaseTextualizer):
         players = [n for n in nodes if n.get('type') == 'player']
         
         if not players:
-            return "未找到相关球员信息。"
+            return "No relevant player information found."
         
         player_info = []
         for player in players:
@@ -532,17 +532,17 @@ class QATextualizer(BaseTextualizer):
         
         overview = []
         if player_count > 0:
-            overview.append(f"{player_count}个球员")
+            overview.append(f"{player_count} players")
         if team_count > 0:
-            overview.append(f"{team_count}个球队")
+            overview.append(f"{team_count} teams")
         
         if overview:
-            text_parts.append(f"找到相关信息：{', '.join(overview)}")
+            text_parts.append(f"Found relevant information: {', '.join(overview)}")
         
         # 关键实体
         key_entities = []
         for node in nodes[:5]:  # 前5个实体
-            name = node.get('name', '未知')
+            name = node.get('name', 'Unknown')
             node_type = node.get('type', '')
             if node_type:
                 key_entities.append(f"{name}({node_type})")
@@ -550,7 +550,7 @@ class QATextualizer(BaseTextualizer):
                 key_entities.append(name)
         
         if key_entities:
-            text_parts.append(f"主要实体：{', '.join(key_entities)}")
+            text_parts.append(f"Main entities: {', '.join(key_entities)}")
         
         return "\n".join(text_parts)
     

@@ -1,12 +1,14 @@
 """
 完整的查询处理流水线
 实现从HTTP输入到LLM输出的端到端流程
+使用统一的QueryContext数据对象
 """
 import time
 import logging
 from typing import Dict, Any, Optional
-from dataclasses import dataclass
 
+from app.core.schemas import QueryContext, QueryContextFactory, LanguageInfo, IntentInfo, EntityInfo, RAGResult, LLMResult
+from app.core.validation import global_monitor, global_validator
 from app.router.intelligent_router import IntelligentRouter
 from app.rag.processors import processor_manager
 from app.llm import create_llm_system, LLMSystem
@@ -230,7 +232,7 @@ class QueryPipeline:
             contextualized_text = rag_result.get('contextualized_text', '')
             
             if not contextualized_text:
-                return "抱歉，没有找到相关信息。"
+                return "Sorry, no relevant information found."
             
             # 解析contextualized_text
             if '球员:' in contextualized_text:
@@ -242,16 +244,16 @@ class QueryPipeline:
                 
                 if is_age_query:
                     if yao_ming_found:
-                        return "根据我的数据库，我找到了一些相关的球员信息，但没有找到姚明的具体年龄数据。数据库中包含的球员有：" + ', '.join(players[:3]) + "。"
+                        return "According to my database, I found some related player information, but couldn't find Yao Ming's specific age data. The players in the database include: " + ', '.join(players[:3]) + "."
                     elif players:
-                        return f"找到了以下球员：{', '.join(players[:3])}，但没有找到姚明的年龄信息。"
+                        return f"Found the following players: {', '.join(players[:3])}, but couldn't find Yao Ming's age information."
                     else:
-                        return "抱歉，没有找到相关的年龄信息。"
+                        return "Sorry, no relevant age information found."
                 else:
                     if yao_ming_found:
-                        return "找到了姚明的相关信息。"
+                        return "Found information about Yao Ming."
                     elif players:
-                        return f"找到了以下相关球员：{', '.join(players[:3])}。"
+                        return f"Found the following related players: {', '.join(players[:3])}."
             
             # 检查球队信息
             if '球队:' in contextualized_text:
@@ -259,21 +261,21 @@ class QueryPipeline:
                 teams = [t.strip() for t in team_part.split(',') if t.strip()]
                 
                 if teams:
-                    return f"找到了相关球队信息：{', '.join(teams)}。"
+                    return f"Found relevant team information: {', '.join(teams)}."
             
             # 如果是关于姚明的查询，提供特定回答
             if 'yao ming' in query.lower() or '姚明' in query.lower():
                 if is_age_query:
-                    return "抱歉，我的数据库中没有找到姚明的年龄信息。数据库目前主要包含其他NBA球员的信息。"
+                    return "Sorry, I couldn't find Yao Ming's age information in my database. The database currently contains mainly other NBA players' information."
                 else:
-                    return "抱歉，我的数据库中没有找到姚明的详细信息。数据库目前主要包含其他NBA球员的信息。"
+                    return "Sorry, I couldn't find Yao Ming's detailed information in my database. The database currently contains mainly other NBA players' information."
             
             # 默认回答
-            return f"找到了一些相关信息：{contextualized_text}"
+            return f"Found some relevant information: {contextualized_text}"
             
         except Exception as e:
             logger.error(f"❌ 生成回退响应失败: {str(e)}")
-            return "抱歉，处理您的查询时遇到了问题。"
+            return "Sorry, there was an issue processing your query."
     
     def _update_stats(self, result: QueryResult):
         """更新统计信息"""

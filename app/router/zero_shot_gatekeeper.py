@@ -159,11 +159,11 @@ class ZeroShotGatekeeper:
             'filter_method': 'zero_shot_classification'
         }
         
-        # Determine if basketball related - 优化版：basketball sports得分超过阈值即通过
+        # Determine if basketball related - optimized: basketball sports score above threshold passes
         basketball_score = all_scores.get("basketball sports", 0.0)
         is_basketball = basketball_score >= confidence_threshold
         
-        # 如果不通过但basketball sports得分较高，降低要求
+        # If not passed but basketball sports score is high, lower requirements
         if not is_basketball and basketball_score >= 0.15:  # 对姚明等篮球人名放宽标准
             is_basketball = True
         

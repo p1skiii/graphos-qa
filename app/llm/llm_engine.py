@@ -560,7 +560,7 @@ class LLMEngine:
             
         except Exception as e:
             logger.error(f"❌ 文本生成失败: {str(e)}")
-            return f"抱歉，生成响应时出现错误: {str(e)}"
+            return f"Sorry, an error occurred while generating response: {str(e)}"
     
     def _post_process_response(self, response_text: str, unified_input: UnifiedInput) -> str:
         """后处理响应"""
@@ -575,7 +575,7 @@ class LLMEngine:
             
             # 确保响应不为空
             if not response:
-                response = "抱歉，我无法基于提供的信息回答这个问题。"
+                response = "Sorry, I cannot answer this question based on the provided information."
             
             # Markdown格式化（如果启用）
             if self.config.format_markdown:
@@ -619,7 +619,7 @@ class LLMEngine:
     def _create_error_response(self, error_message: str, unified_input: UnifiedInput) -> LLMResponse:
         """创建错误响应"""
         return LLMResponse(
-            content=f"抱歉，处理您的请求时出现错误: {error_message}",
+            content=f"Sorry, an error occurred while processing your request: {error_message}",
             metadata={
                 'error': True,
                 'error_message': error_message,

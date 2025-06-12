@@ -34,7 +34,7 @@ class ComparisonProcessor(BaseProcessor):
             entity_nodes = self._retrieve_comparison_entities(query, comparison_entities)
             
             if not entity_nodes:
-                return self._create_empty_result(query, "未找到可比较的实体")
+                return self._create_empty_result(query, "No comparable entities found")
             
             # 3. 构建比较子图
             all_seed_nodes = []
@@ -557,7 +557,7 @@ class ComparisonProcessor(BaseProcessor):
             'entity_nodes_count': 0,
             'subgraph_summary': {'nodes': 0, 'edges': 0, 'algorithm': 'none'},
             'comparison_analysis': {'entity_profiles': {}, 'conclusion': ''},
-            'contextualized_text': f"抱歉，{reason}。请提供具体的比较对象。",
+            'contextualized_text': f"Sorry, {reason}. Please provide specific comparison objects.",
             'processing_strategy': 'comparative_analysis',
             'confidence': 0.0,
             'empty_reason': reason

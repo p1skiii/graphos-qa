@@ -36,7 +36,7 @@ class DirectProcessor(BaseProcessor):
             )
             
             if not retrieved_nodes:
-                return self._create_empty_result(query, "未找到相关实体")
+                return self._create_empty_result(query, "No relevant entities found")
             
             # 3. 构建简单子图 (直接查询通常不需要复杂图结构)
             seed_nodes = [node['node_id'] for node in retrieved_nodes[:5]]
@@ -155,7 +155,7 @@ class DirectProcessor(BaseProcessor):
             'query_analysis': {'query_type': 'attribute_query'},
             'retrieved_nodes_count': 0,
             'subgraph_summary': {'nodes': 0, 'edges': 0, 'algorithm': 'none'},
-            'contextualized_text': f"抱歉，{reason}。请尝试更具体的查询。",
+            'contextualized_text': f"Sorry, {reason}. Please try a more specific query.",
             'processing_strategy': 'direct_attribute_query',
             'confidence': 0.0,
             'empty_reason': reason
@@ -181,9 +181,9 @@ class DirectProcessor(BaseProcessor):
     def _format_retrieved_nodes(self, nodes: List[Dict], query: str) -> str:
         """格式化检索到的节点信息"""
         if not nodes:
-            return "未找到相关信息。"
+            return "No relevant information found."
         
-        text_parts = ["根据查询找到以下相关信息："]
+        text_parts = ["Found the following relevant information based on the query:"]
         
         # 按类型分组
         players = [n for n in nodes if n.get('type') == 'player']

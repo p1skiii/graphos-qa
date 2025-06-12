@@ -130,7 +130,7 @@ class ComponentFactory:
     def create_retriever(self, config: ComponentConfig) -> BaseRetriever:
         """创建检索器实例"""
         if config.component_name not in self._retriever_registry:
-            raise ValueError(f"未找到检索器: {config.component_name}")
+            raise ValueError(f"Retriever not found: {config.component_name}")
         
         retriever_class = self._retriever_registry[config.component_name]
         
@@ -150,7 +150,7 @@ class ComponentFactory:
     def create_graph_builder(self, config: ComponentConfig) -> BaseGraphBuilder:
         """创建图构建器实例"""
         if config.component_name not in self._graph_builder_registry:
-            raise ValueError(f"未找到图构建器: {config.component_name}")
+            raise ValueError(f"Graph builder not found: {config.component_name}")
         
         builder_class = self._graph_builder_registry[config.component_name]
         
@@ -170,7 +170,7 @@ class ComponentFactory:
     def create_textualizer(self, config: ComponentConfig) -> BaseTextualizer:
         """创建文本化器实例"""
         if config.component_name not in self._textualizer_registry:
-            raise ValueError(f"未找到文本化器: {config.component_name}")
+            raise ValueError(f"Textualizer not found: {config.component_name}")
         
         textualizer_class = self._textualizer_registry[config.component_name]
         
@@ -248,17 +248,17 @@ class ComponentFactory:
         try:
             # 检查检索器
             if config.retriever_config.component_name not in self._retriever_registry:
-                logger.error(f"❌ 未找到检索器: {config.retriever_config.component_name}")
+                logger.error(f"❌ Retriever not found: {config.retriever_config.component_name}")
                 return False
             
             # 检查图构建器
             if config.graph_builder_config.component_name not in self._graph_builder_registry:
-                logger.error(f"❌ 未找到图构建器: {config.graph_builder_config.component_name}")
+                logger.error(f"❌ Graph builder not found: {config.graph_builder_config.component_name}")
                 return False
             
             # 检查文本化器
             if config.textualizer_config.component_name not in self._textualizer_registry:
-                logger.error(f"❌ 未找到文本化器: {config.textualizer_config.component_name}")
+                logger.error(f"❌ Textualizer not found: {config.textualizer_config.component_name}")
                 return False
             
             logger.info(f"✅ 处理器配置 {config.processor_name} 验证通过")

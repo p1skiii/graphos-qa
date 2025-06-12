@@ -213,7 +213,7 @@ class GNNProcessor(BaseProcessor):
             },
             'seed_nodes': [],
             'metadata': {
-                'message': '未找到相关数据'
+                'message': 'No relevant data found'
             }
         }
     

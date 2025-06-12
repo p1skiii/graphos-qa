@@ -129,7 +129,7 @@ class LLMSystem:
             return {
                 'success': False,
                 'error': '系统未就绪，请先加载模型',
-                'content': '抱歉，系统正在初始化中，请稍后再试。'
+                'content': 'Sorry, the system is initializing, please try again later.'
             }
         
         try:
@@ -164,7 +164,7 @@ class LLMSystem:
             return {
                 'success': False,
                 'error': str(e),
-                'content': f'抱歉，处理您的请求时出现错误: {str(e)}'
+                'content': f'Sorry, an error occurred while processing your request: {str(e)}'
             }
     
     def get_system_status(self) -> Dict[str, Any]:

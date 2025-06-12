@@ -11,7 +11,9 @@ CORS(app)
 
 # 注册API蓝图
 from app.routes import api_bp
+from app.routes_unified import unified_api_bp
 app.register_blueprint(api_bp)
+app.register_blueprint(unified_api_bp)
 
 # HTML模板
 HTML_TEMPLATE = """

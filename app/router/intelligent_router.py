@@ -1,5 +1,5 @@
 """
-智能路由器 - 现代化三级瀑布流架构
+Intelligent Router - Modern Three-Tier Cascade Architecture
 """
 import time
 import logging
@@ -13,7 +13,7 @@ from .intent_classifier import intent_classifier
 logger = logging.getLogger(__name__)
 
 class IntelligentRouter:
-    """智能路由器"""
+    """Intelligent Router"""
     
     def __init__(self):
         # 现代化三级瀑布流组件
