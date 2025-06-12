@@ -1,6 +1,7 @@
 """
-新一代查询处理流水线
-基于统一的QueryContext数据对象，实现完整的端到端处理流程
+Unified Query Processing Pipeline v2.0
+Based on unified QueryContext data objects and Smart Pre-processor architecture.
+Implements complete end-to-end processing flow with English-first processing.
 """
 import time
 import logging
@@ -8,7 +9,7 @@ from typing import Dict, Any, Optional
 
 from app.core.schemas import QueryContext, QueryContextFactory, LanguageInfo, IntentInfo, EntityInfo, RAGResult, LLMResult
 from app.core.validation import global_monitor, global_validator
-from app.router.intelligent_router import IntelligentRouter
+from app.router.smart_preprocessor import smart_preprocessor, SmartPreProcessor
 from app.rag.processors import processor_manager
 from app.rag.processors.unified_manager import unified_processor_manager
 from app.llm import create_llm_system, LLMSystem
@@ -16,33 +17,33 @@ from app.llm import create_llm_system, LLMSystem
 logger = logging.getLogger(__name__)
 
 class UnifiedQueryPipeline:
-    """统一查询处理流水线 - 基于QueryContext的新架构"""
+    """Unified Query Processing Pipeline v2.0 - Based on QueryContext and Smart Pre-processor"""
     
     def __init__(self, config: Optional[Dict[str, Any]] = None):
-        """初始化统一查询流水线"""
+        """Initialize unified query pipeline"""
         self.config = config or {}
         
-        # 初始化核心组件
-        self.router = IntelligentRouter()
+        # Initialize core components with new Smart Pre-processor
+        self.smart_preprocessor = smart_preprocessor
         
-        # 处理器映射
+        # Processor mapping - updated for new intent labels
         self.processor_mapping = {
-            'direct_db_lookup': 'direct',
-            'g_retriever_simple': 'simple_g', 
-            'g_retriever_full': 'complex_g',
-            'comparison_logic': 'comparison',
-            'chitchat_llm': 'chitchat',
-            'fallback': 'direct'
+            'ATTRIBUTE_QUERY': 'direct_db_lookup',
+            'SIMPLE_RELATION_QUERY': 'g_retriever_simple', 
+            'COMPLEX_RELATION_QUERY': 'g_retriever_full',
+            'COMPARATIVE_QUERY': 'comparison_logic',
+            'DOMAIN_CHITCHAT': 'chitchat_llm',
+            'OUT_OF_DOMAIN': 'out_of_domain'
         }
         
-        # LLM系统
+        # LLM system
         self.llm_system = None
         self.llm_enabled = self.config.get('llm_enabled', True)
         
         if self.llm_enabled:
             self.initialize_llm()
         
-        logger.info("🚀 统一查询处理流水线初始化完成")
+        logger.info("🚀 Unified Query Processing Pipeline v2.0 initialized with Smart Pre-processor")
     
     def initialize_llm(self) -> bool:
         """初始化LLM系统"""
@@ -64,52 +65,82 @@ class UnifiedQueryPipeline:
             logger.error(f"❌ LLM初始化异常: {str(e)}")
             return False
     
-    def process_query_unified(self, query: str, user_context: Optional[Dict[str, Any]] = None) -> QueryContext:
-        """使用QueryContext的统一查询处理"""
+    async def process_query(self, query: str, options: Optional[Dict[str, Any]] = None) -> QueryContext:
+        """
+        Main query processing method using Smart Pre-processor v2.0
         
-        # 第一步：创建查询上下文
-        context = QueryContextFactory.create(query, user_context)
-        context.add_trace("pipeline", "started", {"query_length": len(query)})
+        This method implements the complete 7-stage processing pipeline:
+        1. Smart Pre-processing (Language + Intent + Entities)
+        2. Context Validation 
+        3. RAG Processing
+        4. LLM Generation
+        5. Post-processing (Language adaptation)
+        6. Final Validation
+        7. Response Finalization
+        """
+        start_time = time.time()
         
         try:
-            # 第二步：语言预处理
-            self._process_language(context)
+            # Stage 1: Smart Pre-processing (replaces old language + intent + routing)
+            context = self.smart_preprocessor.process_query(query)
             
-            # 第三步：意图分类和实体提取
-            self._process_intent_and_entities(context)
+            # Early exit for OUT_OF_DOMAIN queries
+            if context.intent_info and context.intent_info.intent == 'OUT_OF_DOMAIN':
+                context.final_answer = "I can only answer basketball-related questions."
+                context.add_processing_step(
+                    "out_of_domain_handling",
+                    "success", 
+                    time.time() - start_time,
+                    {"reason": "Query not basketball-related"}
+                )
+                return context
             
-            # 第四步：智能路由
-            self._process_routing(context)
+            # Stage 2: Context Validation
+            await self._stage2_context_validation(context)
             
-            # 第五步：RAG处理
-            self._process_rag(context)
+            # Stage 3: RAG Processing  
+            await self._stage3_rag_processing(context)
             
-            # 第六步：LLM生成
-            self._process_llm(context)
+            # Stage 4: LLM Generation
+            await self._stage4_llm_generation(context)
             
-            # 第七步：后处理
-            self._process_postprocessing(context)
+            # Stage 5: Post-processing (Language adaptation)
+            await self._stage5_post_processing(context)
             
-            # 标记成功
-            context.mark_success()
+            # Stage 6: Final Validation
+            await self._stage6_final_validation(context)
+            
+            # Stage 7: Response Finalization
+            await self._stage7_response_finalization(context)
+            
+            # Update performance metrics
+            total_time = time.time() - start_time
+            context.performance_metrics.total_processing_time = total_time
+            context.add_processing_step(
+                "pipeline_completion",
+                "success",
+                total_time,
+                {"stages_completed": 7}
+            )
+            
+            logger.info(f"🎉 Query processing completed successfully ({total_time:.3f}s)")
+            return context
             
         except Exception as e:
-            context.add_error("pipeline", f"处理失败: {str(e)}")
-            logger.error(f"❌ 查询处理失败: {str(e)}")
-        
-        finally:
-            # 计算总处理时间
-            context.total_processing_time = (time.time() - context.timestamp.timestamp())
+            # Error handling
+            if 'context' not in locals():
+                context = QueryContextFactory.create_context(query)
             
-            # 更新全局监控
-            global_monitor.track_request(context)
+            context.add_processing_step(
+                "pipeline_error",
+                "error",
+                time.time() - start_time,
+                {"error": str(e)}
+            )
             
-            context.add_trace("pipeline", "completed", {
-                "status": context.status,
-                "total_time": context.total_processing_time
-            })
-        
-        return context
+            context.final_answer = "Sorry, I encountered an error processing your question."
+            logger.error(f"❌ Pipeline processing failed: {str(e)}")
+            return context
     
     def _process_language(self, context: QueryContext):
         """处理语言检测和标准化"""
