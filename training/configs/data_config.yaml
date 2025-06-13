@@ -1,0 +1,33 @@
+# 数据配置文件
+data_sources:
+  raw_data_path: "./data/raw/english_fine_grained_training_dataset.csv"
+  processed_train_path: "./data/processed/train.json"
+  processed_val_path: "./data/processed/val.json"
+  
+# 数据字段映射
+field_mapping:
+  text_column: "text"      # 输入文本列名
+  label_column: "label"    # 标签列名
+  
+# 数据清洗参数
+preprocessing:
+  min_text_length: 5
+  max_text_length: 512
+  remove_duplicates: true
+  lowercase: false  # 保持原始大小写
+  
+# 标签映射规则（根据实际数据调整）
+label_mapping:
+  # 原始标签 -> 统一标签
+  "attribute": "ATTRIBUTE_QUERY"
+  "attribute_query": "ATTRIBUTE_QUERY"
+  "simple_relation": "SIMPLE_RELATION_QUERY"
+  "relation": "SIMPLE_RELATION_QUERY"
+  "comparison": "COMPARATIVE_QUERY"
+  "comparative": "COMPARATIVE_QUERY"
+  "compare": "COMPARATIVE_QUERY"
+  "chitchat": "DOMAIN_CHITCHAT"
+  "basketball_chat": "DOMAIN_CHITCHAT"
+  "general": "DOMAIN_CHITCHAT"
+  "out_of_domain": "OUT_OF_DOMAIN"
+  "unknown": "OUT_OF_DOMAIN"

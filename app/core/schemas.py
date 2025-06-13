@@ -1,6 +1,7 @@
 """
-Unified Data Contracts
-Defines standardized data structures for the entire system as "Single Source of Truth"
+统一数据合约
+
+定义了整个系统的标准化数据结构，作为“单一事实来源”
 """
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional, Union
@@ -13,101 +14,109 @@ import uuid
 
 @dataclass
 class LanguageInfo:
-    """Language detection and processing information"""
-    original_language: str              # Original language code (zh/en)
-    detected_confidence: float          # Language detection confidence
-    normalized_language: str = "en"     # Normalized language (force English processing)
-    translation_needed: bool = False    # Whether translation is needed
+    """语言检测和处理信息"""
+    original_language: str              # 原始语言代码（zh/en）
+    detected_confidence: float          # 语言检测置信度
+    normalized_language: str = "en"     # 标准化语言（强制英语处理）
+    translation_needed: bool = False    # 是否需要翻译
     
     def __post_init__(self):
-        """Automatically set translation flag"""
+        """自动设置翻译标志"""
         self.translation_needed = (self.original_language != "en")
 
 @dataclass 
 class EntityInfo:
-    """Entity extraction information"""
-    players: List[str] = field(default_factory=list)        # Player name list
-    teams: List[str] = field(default_factory=list)          # Team name list  
-    attributes: List[str] = field(default_factory=list)     # Attribute type list
-    numbers: List[str] = field(default_factory=list)        # Number list
-    question_words: List[str] = field(default_factory=list) # Question word list
+    """实体提取信息"""
+    players: List[str] = field(default_factory=list)        # 玩家名单
+    teams: List[str] = field(default_factory=list)          # 队伍名称列表
+    target_entities: List[str] = field(default_factory=list) # 所有目标实体（球员+队伍）
     
-    # Advanced entity information
-    target_entity: Optional[str] = None                     # Main target entity
-    entity_relationships: Dict[str, Any] = field(default_factory=dict)  # Entity relationships
-    confidence_scores: Dict[str, float] = field(default_factory=dict)   # Entity confidence scores
+    # 保留用于其他模块的字段
+    attributes: List[str] = field(default_factory=list)     # 属性类型列表（由IntentClassifier填充）
+    numbers: List[str] = field(default_factory=list)        # 数字列表
+    question_words: List[str] = field(default_factory=list) # 疑问词列表
+    
+    # 高级实体信息
+    entity_relationships: Dict[str, Any] = field(default_factory=dict)  # 实体关系
+    confidence_scores: Dict[str, float] = field(default_factory=dict)   # 实体置信度得分
+    
+    # 向后兼容属性
+    @property
+    def target_entity(self) -> Optional[str]:
+        """向后兼容：返回第一个目标实体"""
+        return self.target_entities[0] if self.target_entities else None
 
 @dataclass
 class IntentInfo:
-    """Intent classification information"""
-    intent: str                                             # Primary intent
-    confidence: float                                       # Confidence score
-    all_scores: Dict[str, float] = field(default_factory=dict)  # All intent scores
+    """意图分类信息"""
+    intent: str                                             # 主要意图
+    confidence: float                                       # 置信度
+    all_scores: Dict[str, float] = field(default_factory=dict)  # 所有意图分数
     
-    # Intent sub-classification
-    query_type: Optional[str] = None                        # Query type
-    attribute_type: Optional[str] = None                    # Attribute type
-    complexity: str = "simple"                              # Query complexity
-    direct_answer_expected: bool = True                     # Whether direct answer expected
+    # 意图子分类
+    query_type: Optional[str] = None                        # 查询类型
+    attribute_type: Optional[str] = None                    # 属性类型
+    complexity: str = "simple"                              # 查询复杂度
+    direct_answer_expected: bool = True                     # 是否预期直接答案
 
 @dataclass
 class RAGResult:
-    """RAG processing result"""
+    """RAG处理结果"""
     success: bool
-    processor_used: str                                     # Processor used
-    processing_strategy: str                                # Processing strategy
-    processing_time: float = 0.0                           # Processing time
+    processor_used: str                                     # 处理器使用
+    processing_strategy: str                                # 处理策略
+    processing_time: float = 0.0                           # 处理时间
     
-    # Core result data
-    context_text: str = ""                                  # Contextualized text (corrected name)
-    retrieved_nodes: List[Dict[str, Any]] = field(default_factory=list)  # Retrieved node list
-    retrieved_nodes_count: int = 0                          # Retrieved node count (backward compatibility)
-    confidence: float = 0.0                                 # Result confidence
+    # 核心结果数据
+    context_text: str = ""                                  # 上下文文本
+    retrieved_nodes: List[Dict[str, Any]] = field(default_factory=list)  # 已检索节点列表
+    retrieved_nodes_count: int = 0                          # 已检索节点计数 (向后兼容)
+    confidence: float = 0.0                                 # 结果置信度
     
-    # Detailed result information
-    subgraph_summary: Dict[str, Any] = field(default_factory=dict)     # Subgraph summary
-    raw_data: Dict[str, Any] = field(default_factory=dict)             # Raw data
-    metadata: Dict[str, Any] = field(default_factory=dict)             # Metadata
+    # 详细结果信息
+    subgraph_summary: Dict[str, Any] = field(default_factory=dict)     # 子图摘要
+    raw_data: Dict[str, Any] = field(default_factory=dict)             # 原始数据
+    metadata: Dict[str, Any] = field(default_factory=dict)             # 元数据
     
-    # Error handling
-    error_message: Optional[str] = None                     # Error message (corrected name)
-    warnings: List[str] = field(default_factory=list)      # Warning messages
+    # 错误处理
+    error_message: Optional[str] = None                     # 错误信息（正确名称）
+    warnings: List[str] = field(default_factory=list)      # 警告信息
     
-    # Backward compatibility properties
+    # 向后兼容属性
     @property
     def contextualized_text(self) -> str:
-        """Backward compatibility: return context_text"""
+        """向后兼容性：返回上下文文本"""
         return self.context_text
     
     @property 
     def error(self) -> Optional[str]:
-        """Backward compatibility: return error_message"""
+        """向后兼容性：返回错误信息"""
         return self.error_message
 
 @dataclass
 class LLMResult:
-    """LLM generation result"""
+    """LLM生成结果"""
     success: bool
-    content: str = ""                                       # Generated content
-    processing_time: float = 0.0                           # Processing time
+    content: str = ""                                       #生成内容
+    processing_time: float = 0.0                           # 处理时间
     
-    # LLM detailed information
-    model_used: Optional[str] = None                        # Model used (corrected name)
-    tokens_used: int = 0                                    # Tokens used
-    generation_params: Dict[str, Any] = field(default_factory=dict)    # Generation parameters
+    # LLM详细信息
+    model_used: Optional[str] = None                        # 使用的模型
+    tokens_used: int = 0                                    # 使用的token
+    generation_params: Dict[str, Any] = field(default_factory=dict)    # 生成参数
     
-    # Quality assessment
-    quality_score: Optional[float] = None                   # Quality score
-    coherence_score: Optional[float] = None                 # Coherence score
+    # 质量评估
+    quality_score: Optional[float] = None                   # 质量得分
+    coherence_score: Optional[float] = None                 # 一致性得分
     
-    # Error handling
-    error: Optional[str] = None                             # Error message
-    fallback_used: bool = False                             # Whether fallback mechanism was used
+    # 错误处理
+    error: Optional[str] = None                             # 错误信息
+    fallback_used: bool = False                             # 是否使用了回退机制
     
-    # Backward compatibility properties
+    # 向后兼容属性
     @property
     def model_name(self) -> Optional[str]:
-        """Backward compatibility: return model_used"""
+        """向后兼容性：返回model_used"""
         return self.model_used
 
 # =============================================================================
@@ -117,36 +126,39 @@ class LLMResult:
 @dataclass
 class QueryContext:
     """
-    Global request context - the "briefcase" that travels through the entire system
-    Each processing stage records inputs and outputs in this object, forming complete request tracing
+    全局请求上下文 - 穿越整个系统的“公文包”
+    每个处理阶段在此对象中记录输入和输出，形成完整的请求追踪
     """
     
-    # Basic information
+    # 基本信息
     request_id: str = field(default_factory=lambda: str(uuid.uuid4()))
     timestamp: datetime = field(default_factory=datetime.now)
     
-    # User input
+    # 用户输入
     original_query: str = ""                                # User original query
     user_context: Dict[str, Any] = field(default_factory=dict)  # User context
     
-    # Language processing - filled by intelligent preprocessor
+    # 语言处理 - 由智能预处理器填充
     language_info: Optional[LanguageInfo] = None
     normalized_query: str = ""                              # Normalized query (English)
     
-    # Intent and entities - filled by unified intent classifier
+    # NLP处理结果 - 由NLP模块填充
+    tokens: List[Any] = field(default_factory=list)        # 分词结果
+    
+    # 意图和实体 - 由统一意图分类器填充
     intent_info: Optional[IntentInfo] = None
     entity_info: Optional[EntityInfo] = None
     
-    # Routing information - filled by router
+    # 路由信息 - 由路由器填写
     routing_path: str = ""                                  # Routing path
     processor_selected: str = ""                            # Selected processor
     routing_reason: str = ""                                # Routing reason
     routing_time: float = 0.0                               # Routing time
     
-    # RAG processing - filled by RAG processor
+    # RAG处理 - 由RAG处理器填充
     rag_result: Optional[RAGResult] = None
     
-    # LLM generation - filled by LLM engine
+    # LLM生成 - 由LLM引擎填充
     llm_result: Optional[LLMResult] = None
     
     # 最终结果
@@ -282,19 +294,19 @@ class QueryContextFactory:
         
         # 基础验证
         if not context.original_query.strip():
-            validation_errors.append("原始查询不能为空")
+            validation_errors.append("Original query cannot be empty")
         
-        # 语言信息验证
+        # Language information validation
         if context.language_info and context.language_info.detected_confidence < 0.5:
-            validation_errors.append("语言检测置信度过低")
+            validation_errors.append("Language detection confidence too low")
         
-        # 意图信息验证
+        # Intent information validation
         if context.intent_info and context.intent_info.confidence < 0.3:
-            validation_errors.append("意图分类置信度过低")
+            validation_errors.append("Intent classification confidence too low")
         
-        # RAG结果验证
+        # RAG result validation
         if context.rag_result and not context.rag_result.success and not context.rag_result.error:
-            validation_errors.append("RAG处理失败但没有错误信息")
+            validation_errors.append("RAG processing failed but no error message provided")
         
         return validation_errors
     

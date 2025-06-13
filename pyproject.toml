@@ -24,6 +24,10 @@ pandas = "<3.0"
 datasets = "<3.0"
 nebula3-python = "^3.8.3"
 torch-geometric = "^2.6.1"
+spacy = "^3.7.2"
+nltk = "^3.8.1"
+langdetect = "^1.0.9"
+textblob = "^0.17.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.0"

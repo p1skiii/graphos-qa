@@ -1,0 +1,26 @@
+# 训练专用依赖 - 独立于业务代码
+# 基础机器学习框架
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+tokenizers>=0.13.0
+
+# 数据处理
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# 配置管理
+PyYAML>=6.0
+
+# 评估指标
+seaborn>=0.12.0
+matplotlib>=3.7.0
+
+# 进度条和日志
+tqdm>=4.65.0
+wandb>=0.15.0  # 可选：实验跟踪
+
+# 模型压缩（可选）
+onnx>=1.14.0
+onnxruntime>=1.15.0

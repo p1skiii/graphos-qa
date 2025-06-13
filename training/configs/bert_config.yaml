@@ -1,0 +1,44 @@
+# BERT意图分类训练配置
+model:
+  name: "distilbert-base-uncased"
+  max_length: 128
+  num_labels: 5
+
+training:
+  batch_size: 16
+  learning_rate: 2e-5
+  num_epochs: 3
+  warmup_steps: 500
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  fp16: false  # 如果有GPU支持可以设为true
+  
+data:
+  train_split: 0.8
+  val_split: 0.2
+  random_seed: 42
+  
+output:
+  model_dir: "../../models/intent_classifier/v1.0"
+  logs_dir: "./logs"
+  save_steps: 500
+  eval_steps: 500
+  logging_steps: 100
+  
+# 意图标签映射
+labels:
+  ATTRIBUTE_QUERY: 0
+  SIMPLE_RELATION_QUERY: 1
+  COMPARATIVE_QUERY: 2
+  DOMAIN_CHITCHAT: 3
+  OUT_OF_DOMAIN: 4
+
+# 早停参数
+early_stopping:
+  patience: 3
+  metric: "accuracy"
+  
+# 实验跟踪（可选）
+wandb:
+  project: "basketball-intent-classification"
+  enabled: false
